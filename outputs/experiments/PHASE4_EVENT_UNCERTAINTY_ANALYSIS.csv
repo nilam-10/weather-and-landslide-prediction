@@ -1,0 +1,13 @@
+model_name,validation_scheme,uncertainty_mode,total_samples,total_presences,total_background,accuracy,balanced_accuracy,precision,recall,specificity,f1_score,roc_auc,pr_auc,brier_score,tp,fp,fn,tn,prevalence,cohort
+Logistic Regression,3-Fold Leave-One-Block-Out Spatial CV,Nominal_Point_0m,228,38,190,0.8333,0.5105,0.5,0.0263,0.9947,0.05,0.4787,0.1982,0.1509,1,1,37,189,0.1667,Full 38 Events
+Random Forest,3-Fold Leave-One-Block-Out Spatial CV,Nominal_Point_0m,228,38,190,0.7895,0.4947,0.1429,0.0526,0.9368,0.0769,0.4483,0.1724,0.1688,2,12,36,178,0.1667,Full 38 Events
+XGBoost,3-Fold Leave-One-Block-Out Spatial CV,Nominal_Point_0m,228,38,190,0.7325,0.4605,0.0741,0.0526,0.8684,0.0615,0.5064,0.1693,0.1825,2,25,36,165,0.1667,Full 38 Events
+Logistic Regression,3-Fold Leave-One-Block-Out Spatial CV,Buffer_450m_5x5,228,38,190,0.9605,0.9026,0.9394,0.8158,0.9895,0.8732,0.9903,0.9352,0.031,31,2,7,188,0.1667,Full 38 Events
+Random Forest,3-Fold Leave-One-Block-Out Spatial CV,Buffer_450m_5x5,228,38,190,0.9298,0.8421,0.8438,0.7105,0.9737,0.7714,0.9669,0.8834,0.0541,27,5,11,185,0.1667,Full 38 Events
+XGBoost,3-Fold Leave-One-Block-Out Spatial CV,Buffer_450m_5x5,228,38,190,0.9211,0.8474,0.7778,0.7368,0.9579,0.7568,0.9623,0.868,0.0548,28,8,10,182,0.1667,Full 38 Events
+Logistic Regression,3-Fold Leave-One-Block-Out Spatial CV,Buffer_1000m_11x11,228,38,190,0.9781,0.9447,0.9714,0.8947,0.9947,0.9315,0.9964,0.9735,0.0179,34,1,4,189,0.1667,Full 38 Events
+Random Forest,3-Fold Leave-One-Block-Out Spatial CV,Buffer_1000m_11x11,228,38,190,0.9518,0.8974,0.8857,0.8158,0.9789,0.8493,0.9802,0.9382,0.0362,31,4,7,186,0.1667,Full 38 Events
+XGBoost,3-Fold Leave-One-Block-Out Spatial CV,Buffer_1000m_11x11,228,38,190,0.9386,0.9,0.8,0.8421,0.9579,0.8205,0.9812,0.9422,0.0371,32,8,6,182,0.1667,Full 38 Events
+Logistic Regression,3-Fold Leave-One-Block-Out Spatial CV,Buffer_450m_HighConfidenceOnly,212,22,190,0.967,0.861,0.9412,0.7273,0.9947,0.8205,0.9577,0.7802,0.036,16,1,6,189,0.1038,High Confidence <=5km (N=22)
+Random Forest,3-Fold Leave-One-Block-Out Spatial CV,Buffer_450m_HighConfidenceOnly,212,22,190,0.9292,0.7596,0.7059,0.5455,0.9737,0.6154,0.9299,0.7259,0.0547,12,5,10,185,0.1038,High Confidence <=5km (N=22)
+XGBoost,3-Fold Leave-One-Block-Out Spatial CV,Buffer_450m_HighConfidenceOnly,212,22,190,0.9387,0.8251,0.7143,0.6818,0.9684,0.6977,0.884,0.6417,0.0549,15,6,7,184,0.1038,High Confidence <=5km (N=22)

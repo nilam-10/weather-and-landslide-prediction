@@ -1,0 +1,8 @@
+rainfall_threshold_mm_hr,threshold_category,train_total_pixels,train_positive_pixels,train_prevalence_percent,train_negative_to_positive_ratio,recommended_pos_weight,val_prevalence_percent,test_prevalence_percent
+1.0,Light Rain,576000,114540,19.885,4.0,4.03,19.483,9.658
+2.5,Moderate Rain,576000,57387,9.963,9.0,9.04,10.479,3.485
+5.0,Moderate Rain,576000,25610,4.446,21.5,21.49,3.915,1.364
+7.5,Heavy Convective,576000,12294,2.134,45.9,45.85,1.521,0.678
+10.0,Heavy Convective,576000,6166,1.07,92.4,92.42,0.806,0.382
+15.0,Heavy Convective,576000,2226,0.386,257.8,257.76,0.248,0.133
+20.0,Heavy Convective,576000,973,0.169,591.0,590.98,0.075,0.036

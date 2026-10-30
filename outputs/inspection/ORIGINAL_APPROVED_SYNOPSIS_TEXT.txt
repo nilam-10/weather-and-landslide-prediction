@@ -1,0 +1,191 @@
+SHRI RAMDEOBABA COLLEGE OF ENGINEERINGAND MANAGEMENT, NAGPUR
+
+Department of Computer Science & Engineering
+
+PROJECT SYNOPSIS
+
+Session: 2026-2027   |    Semester: VII    |    Programme: Honours 
+
+MULTIMODAL AI PLATFORM FOR CONVECTIVE NOWCASTING AND LANDSLIDE RISK PREDICTION
+
+Submitted by:
+
+Nilam Bhojwani [Roll No. AIML-B-33]
+
+Moli Agrawal [Roll No. CSE-B-35]  
+
+Grisha Lala [Roll No. CSE-A-53]  
+
+Shloak Nioding [Roll No.CSE-C-34]
+
+Under the Guidance of:
+
+Dr. Amit Pimpalkar, Assistant Professor
+
+Date:
+
+[01 / 09 / 2026]
+
+1. Background and Motivation
+
+The North Eastern Region (NER) of India is highly vulnerable to rapidly developing thunderstorms, hail, cloudbursts and rainfall-triggered landslides due to its mountainous terrain, steep slopes, intense rainfall and fragile geological conditions. However, convective hazards and landslides are generally studied using separate datasets and forecasting systems, limiting the development of a unified operational view. Motivated by Smart India Hackathon problem statements SIH26084 and SIH26001, this project develops two independently trained AI-based research modules within a common GIS platform: a 0–6-hour convective-hazard nowcasting module and a next-24-hour landslide-hazard probability module. The nowcasting module will analyse sequences of radar, satellite, lightning and precipitation observations, while the landslide module will combine historical inventories from GSI/NRSC, NASA GPM IMERG rainfall observations and terrain characteristics derived from the SRTM Digital Elevation Model. Elevation, slope, aspect and curvature represent underlying susceptibility, while short-term and antecedent rainfall provide dynamic triggering information. Recent studies demonstrate strong AI approaches for precipitation nowcasting and machine-learning-based landslide susceptibility or probability modelling. To ensure reliable evaluation, the project will avoid random data splitting where inappropriate, compare available modalities, and assess probability calibration rather than reporting performance alone. The validated outputs will be presented through an interpretable GIS-based dashboard with warning levels. The core system is designed for experimental validation within two months, with future scope for soil moisture, satellite imagery and IoT integration
+
+The project will also reproduce or adapt representative methodologies from selected published studies and evaluate them on the project dataset using their reported hyperparameters and experimental configurations wherever sufficient details are available. Their performance will be compared with standard baselines and the proposed models under a common evaluation framework.
+
+2. Problem Statement
+
+The North Eastern Region (NER) requires short-term, location-aware assessment of two complementary hazards: rapidly evolving convective weather and rainfall-induced landslides. Landslide occurrence is influenced by relatively stable terrain conditions such as elevation, slope, aspect and curvature, while rainfall acts as the principal short-term trigger. Existing studies often focus on static susceptibility or address convective hazards and landslides independently, without fully capturing their temporal and rainfall-driven nature. This project investigates whether multi-source observations and machine-learning models can produce reliable, location-specific hazard probabilities for both 0–6-hour convective hazards and next-24-hour landslide risk. The landslide module will combine historical landslide records, rainfall patterns and terrain characteristics to generate early-warning risk maps. It will specifically evaluate whether rainfall information improves prediction over terrain-only models and whether the models generalise to unseen time periods and geographically separated locations. For both modules, simple baselines will be compared with advanced spatio-temporal models, the contribution of individual input sources will be assessed, and spatial and temporal data leakage will be prevented. For both modules, standard baselines, representative methodologies from existing research papers, and the proposed models will be evaluated under a common experimental protocol. The contribution of individual input sources will be assessed, and spatial and temporal data leakage will be prevented. Model probabilities will also be calibrated to improve their reliability and interpretability. 
+
+3. Objectives
+
+Achieve reproducible 0-6-hour convective-hazard nowcasts from available multi-source meteorological observations.
+
+Achieve location-specific next-24-hour landslide-hazard probabilities using dated events, antecedent rainfall and terrain information.
+
+Reproduce or adapt selected methodologies from relevant research papers using their reported hyperparameters and experimental configurations, and benchmark them against standard baselines and the proposed models on a common dataset and evaluation protocol. 
+
+Determine whether multimodal inputs and advanced spatio-temporal models improve predictive skill over declared baselines.
+
+Reproduce and evaluate selected models proposed in existing research papers by training them on the project dataset using the hyperparameters and experimental settings reported in their respective studies, and compare their performance with the proposed models under a common evaluation protocol. 
+
+4. Literature Review and Research Gap
+
+1. Rani et al. (2026): Uses rainfall time-series and landslide data with a Transformer-based approach for landslide probability modelling. The rainfall-sequence methodology will be reproduced/adapted and evaluated on the project dataset.
+
+2. Mihu et al. (2026): Uses Dibang Valley landslide data with XGBoost/LightGBM and SHAP for landslide susceptibility modelling. The boosting models and explainability approach will be benchmarked where applicable.
+
+3. Badavath & Sahoo (2025): Uses a Meghalaya landslide inventory with conditioning factors and a multi-model machine-learning approach for susceptibility mapping. Selected models will be benchmarked on the project dataset.
+
+4. Kassoumeh et al. (2025): Uses radar and satellite observations for multimodal heavy-rain nowcasting through multimodal fusion. The methodology will be reproduced/adapted and benchmarked under the common evaluation protocol.
+
+5. Jash et al. (2025): Uses Indian Doppler Weather Radar (DWR) observations for thunderstorm evolution prediction using a GAN-based nowcasting approach. The methodology will be reproduced/adapted and benchmarked on the project dataset where the required configuration is available.
+
+Research Gap:
+
+• Published work demonstrates several AI approaches for convective nowcasting and landslide susceptibility/probability modelling, but studies generally use different datasets, geographic regions, preprocessing procedures and validation strategies, making direct comparison difficult.• Limited work systematically benchmarks representative published methodologies alongside standard baselines and newly proposed models on a common dataset for the North Eastern Region of India.• The proposed work addresses this gap by reproducing or adapting selected published methodologies using their reported experimental configurations, where sufficiently documented, and evaluating them with baseline and proposed models under a common leakage-safe spatial and temporal validation framework.• The study will additionally evaluate modality contributions and probability calibration.
+
+5. Proposed Methodology 
+
+1) Study area and access gate: Meghalaya will be used as the proposed common study area because it is affected by both convective rainfall and landslides. Before modelling, the team will verify temporal coverage, licences and usable resolution for each source. Inputs that cannot be accessed or aligned will be recorded as unavailable and excluded from the affected experiment.
+
+2) Weather dataset: INSAT-3D/3DR image sequences from MOSDAC and GPM IMERG precipitation will be quality checked, reprojected and aligned on common timestamps and grids. Attributes include satellite image observations and precipitation values; each sample contains observations up to reference time t with future targets at 15, 30, 60 and 180 minutes. The final usable dataset size will be recorded after access, quality checks and temporal/grid alignment; DWR and lightning data will be added only if authorised and sufficiently continuous.
+
+3a) Landslide dataset: GSI/NRSC inventory records will be filtered for valid coordinates and occurrence dates, with each observation represented as one spatial grid cell on one reference day. Attributes include landslide occurrence, SRTM-derived elevation, slope, aspect and curvature, and rainfall accumulated over the preceding 6, 12, 24 and 72 hours and seven days. The final usable size will be the number of valid grid-cell/day samples after filtering and time-matching; a positive label indicates a recorded landslide during the following 24 hours.
+
+3b) Terrain dataset: SRTM Digital Elevation Model data will provide static terrain attributes for the landslide model. Attributes include elevation, slope, aspect and curvature, aggregated to the common rainfall grid. The usable size will depend on the selected Meghalaya study-area extent and the final common grid resolution after preprocessing.
+
+4) Models and experiments: Weather experiments will compare persistence and optical flow with a ConvLSTM-based multimodal model. Landslide experiments will compare Logistic Regression, XGBoost/LightGBM and, if the dated sample size is adequate, a GRU rainfall-sequence branch fused with an MLP terrain branch. In addition, selected models and architectures reported in relevant research papers will be reproduced or adapted and trained on the project dataset using the hyperparameters and training configurations reported in those studies, wherever the required information and implementation are available. Their performance will be evaluated under the same data splits, metrics and preprocessing protocol as the proposed models to enable a fair comparison. Ablation studies will compare satellite-only versus satellite-plus-rainfall weather inputs and terrain-only, rainfall-only and combined landslide inputs. Soil moisture, land cover, radar and lightning will form additional experiments only when usable. 
+
+5) Evaluation and integration: Splits will be created before model fitting so adjacent times or locations do not leak across partitions. Weather evaluation will report CSI, POD, FAR and FSS by lead time. Landslide evaluation will report PR-AUC, recall, false-negative rate, F1 and Brier score using spatial-block and chronological holdouts. Calibration curves, confidence intervals and SHAP/feature attribution will support interpretation. Only validated probabilities will be published as separate GIS layers with timestamp, provenance and research warning levels. The two independently calibrated model outputs will be spatially aligned to the same GIS grid and timestamp. They will be combined at the dashboard/presentation layer rather than merged into an unvalidated single probability: the convective-hazard output will be shown as a forecast geographic probability/heat layer and the landslide output as a next-24-hour risk heatmap. A synchronized map view will allow both layers to be overlaid or viewed separately, with each location showing the corresponding hazard probability, warning level, forecast horizon and confidence.
+
+6. Technology, Tools and Platforms
+
+The project will deliver two independently evaluated probability models, modality-ablation results, calibration and explainability reports, reproducible dataset-building code, and a common GIS dashboard. Users will be able to select a time and location, switch between weather and landslide layers, inspect forecast horizon, confidence and data provenance, and view research warning categories derived from validation data. The final report will include failure cases, unavailable inputs and geographic limits. Success means measurable held-out skill over declared baselines and reliable probability estimates; it does not mean guaranteed event prediction or government-grade alerts. 
+
+7. Expected Outcomes, Deliverables and Functional Specifications
+
+The project will deliver two independently evaluated probability models, a unified spatio-temporal landslide dataset, modality-ablation results including terrain-only versus terrain-plus-rainfall comparisons, calibration and SHAP-based explainability reports, reproducible dataset-building code, and a common interactive GIS dashboard. Users will be able to select a time and location, switch between weather and landslide layers, view historical landslide locations and predicted risk heatmaps, inspect terrain and rainfall conditions, and view the forecast horizon, confidence, data provenance and research warning categories (Low/Moderate/High/Critical) derived from validation results.
+
+The system will report leakage-safe spatial and temporal validation, including performance on unseen regions and future periods. The final report will document baseline comparisons, failure cases, unavailable inputs and geographic limitations. Success will be defined by reproducible held-out validation, measurable improvement from adding rainfall to terrain-based susceptibility, and reliable calibrated probability estimates. 
+
+8. Project Scope
+
+The project is a 24-week college research prototype focused on selected study areas in Meghalaya and the broader NER where suitable data are available. It covers data acquisition and processing, terrain and rainfall feature engineering, independent convective-weather and landslide experiments, machine-learning model development and comparison, leakage-safe spatial and temporal validation, explainability, and GIS-based risk visualisation. Historical and near-real-time data processing will be included where feasible.
+
+The scope also includes reproduction and benchmarking of selected published research models using their reported hyperparameters and experimental configurations, subject to availability of sufficient implementation and methodological details. 
+
+The project excludes automatic evacuation decisions, guaranteed 0–6-hour prediction accuracy, physical IoT soil-moisture sensor deployment or large-scale sensor networks, unrestricted proprietary radar or lightning feeds, real-time high-resolution satellite image processing, native mobile applications, government-grade SMS alert infrastructure, and replacement of IMD, GSI, MDoNER or disaster-management authorities. These may be considered as future extensions. If radar, lightning, satellite or historical landslide records are inadequate, the corresponding experiment will be explicitly reduced rather than supported by synthetic or unsupported data.
+
+9. Project Timeline
+
+Phase
+
+Duration
+
+Milestone / Deliverable
+
+Literature review & requirement analysis
+
+Week 1-4
+
+Verified sources, access matrix, metrics
+
+Design & methodology finalisation
+
+Week 5-7
+
+Aligned weather sequences and grid-cell-time landslide dataset
+
+Implementation/development
+
+Week 8-17
+
+Persistence/LR baselines, ConvLSTM, boosting, conditional GRU fusion, and reproduction/adaptation of selected published models 
+
+Testing & evaluation
+
+Week 18-21
+
+Published-model benchmarking, ablations, spatial/temporal tests, calibration and explanations  
+
+Documentation & final submission
+
+Week 22-24
+
+Code, synopsis, report and demonstration
+
+10. References
+
+[1] S. Ravuri et al., "Skillful precipitation nowcasting using deep generative models of radar," Nature, vol. 597, pp. 672-677, 2021, doi: 10.1038/s41586-021-03854-z.
+
+[2] Y. Zhang et al., "Skilful nowcasting of extreme precipitation with NowcastNet," Nature, vol. 619, pp. 526-532, 2023, doi: 10.1038/s41586-023-06184-4.
+
+[3] D. Jash et al., "Prediction of thunderstorm evolution using deep learning models with Doppler weather radar observations over southern part of India," Dynamics of Atmospheres and Oceans, vol. 111, art. 101565, 2025, doi: 10.1016/j.dynatmoce.2025.101565.
+
+[4] R. Kassoumeh, D. Rügamer, and H. Oppel, "Enhancing heavy rain nowcasting with multimodal data: Integrating radar and satellite observations," arXiv:2511.00716, 2025.
+
+[5] N. Badavath and S. Sahoo, "Geospatial assessment and integrated multi-model approach for landslide susceptibility mapping in Meghalaya, India," Advances in Space Research, vol. 75, no. 3, 2025, doi: 10.1016/j.asr.2024.11.052.
+
+[6] S. Mihu et al., "Machine Learning-based landslide susceptibility modeling in the Dibang Valley, NE India," Earth Systems and Environment, vol. 10, pp. 8639-8663, 2026, doi: 10.1007/s41748-026-01036-3.
+
+[7] M. Ado, N. Kane, and K. Amitab, "A stacked ensemble machine learning technique for landslide susceptibility mapping in Meghalaya, India," Georisk, 2026, doi: 10.1080/17499518.2026.2636068.
+
+[8] R. Rani, A. Dahal, M. Berti, and L. Lombardo, "Transformer, more than meets the eye: A deep learning approach to integrate rainfall time-series in multi-type landslide probability modelling," Geoscience Frontiers, vol. 17, no. 3, art. 102295, 2026, doi: 10.1016/j.gsf.2026.102295.
+
+[9] C. F. Barella, J. L. Zêzere, and N. F. Fernandes, "Validation and prediction challenges in data-driven landslide susceptibility mapping: Insights from random sampling of training and test data in machine learning models," Bulletin of Engineering Geology and the Environment, vol. 85, art. 253, 2026, doi: 10.1007/s10064-026-04911-5.
+
+Group Member Details
+
+Branch
+
+Roll No.
+
+Name and Signature of Student
+
+CSE-AIML
+
+B-33
+
+Nilam Bhojwani 
+
+CSE
+
+B-35
+
+Moli Agrawal 
+
+CSE
+
+A-53
+
+Grisha Lala 
+
+CSE
+
+C-34
+
+Shloak Nioding 
+
+Approved by:
+
+Dr. Amit Pimpalkar  ______________________________

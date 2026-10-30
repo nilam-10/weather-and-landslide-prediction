@@ -1,0 +1,6 @@
+exp_id,description,hidden_channels,parameters,input_sequence_len,loss_type,optimizer,weight_decay,use_amp,avg_epoch_time_s,test_csi_raw_30m,test_csi_cal_30m,test_f1_cal_30m,test_roc_auc_30m,test_pr_auc_30m,test_brier_raw_30m,test_brier_cal_30m,test_ece_cal_30m,qpf_rmse_mm_hr,qpf_mae_mm_hr,qpf_correlation_r
+EXP_01_BASELINE,"Baseline: (32, 32) hidden channels, t_in=4, Compound Loss, AdamW, AMP","(32, 32)",161034,4,compound,adamw,0.0001,True,0.885,0.4131,0.3761,0.5466,0.9752,0.6112,0.0292,0.0082,0.0013,0.679,0.124,0.648
+EXP_02_CHANNEL_64,"Increased Model Capacity: (32, 64) hidden channels","(32, 64)",354698,4,compound,adamw,0.0001,True,0.808,0.4155,0.3528,0.5216,0.9763,0.6013,0.0276,0.0083,0.0021,0.679,0.115,0.649
+EXP_03_LOSS_BCE_ONLY,Loss Ablation: Weighted BCE only (No Soft Dice loss),"(32, 32)",161034,4,bce_only,adamw,0.0001,True,0.706,0.4078,0.3814,0.5522,0.9761,0.6031,0.0348,0.0083,0.0019,0.681,0.116,0.647
+EXP_04_OPT_ADAM_NO_DECAY,Regularization Ablation: Standard Adam without weight decay,"(32, 32)",161034,4,compound,adam,0.0,True,0.709,0.4155,0.3831,0.554,0.9747,0.6095,0.0292,0.0082,0.0012,0.678,0.115,0.649
+EXP_05_NO_AMP_FP32,Precision Ablation: Full FP32 precision (AMP disabled),"(32, 32)",161034,4,compound,adamw,0.0001,False,0.7,0.4153,0.3786,0.5492,0.9757,0.6078,0.0288,0.0083,0.0016,0.68,0.124,0.647

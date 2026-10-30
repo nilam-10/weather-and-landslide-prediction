@@ -1,0 +1,6 @@
+experiment_id,ablation_description,training_regime,lead_time,csi,roc_auc,pr_auc,brier_score_calibrated,finding
+ABL-001,Full Multimodal Model (MERGIR IR Tb + IMERG Rain Rate + Mask),"Multi-Year (2024+2025, 528 steps)",+30m,0.4168,0.9737,0.6132,0.0083,Optimal performance: geostationary IR cloud-top dynamics constrain radar extrapolation.
+ABL-002,Rainfall-Only Unimodal (IMERG Rain Rate without MERGIR IR),"Multi-Year (2024+2025, 528 steps)",+30m,0.3982,0.961,0.5821,0.0091,Skill drops by -4.5% CSI without thermal infrared cloud-top brightness context.
+ABL-003,"Single-Year Pilot Training (July 2025 Only, 192 steps)",Single-Year Pilot (192 steps),+30m,0.415,0.9741,0.5876,0.0088,Multi-year training enhances precision from 0.5618 to 0.5884 by capturing diverse storm tracks.
+ABL-004,Uncalibrated Logit Output (Raw Sigmoid without Platt Scaling),"Multi-Year (2024+2025, 528 steps)",+30m,0.4168,0.9737,0.6132,0.0322,Brier score elevated by 288% due to positive weighting logit shift ln(20) ≈ 3.0.
+ABL-005,Symmetric Unbuffered vs. Asymmetric Buffer (Landslide),3-Fold Spatial Block CV (38 events),Static Susceptibility,,0.5913,0.2285,0.134,Flawed asymmetric window-max artificially inflated AUC to 0.9666; symmetric baseline is 0.5913.

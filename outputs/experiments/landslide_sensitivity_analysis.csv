@@ -1,0 +1,6 @@
+buffer_radius_m,buffer_description,event_mean_slope_deg,event_max_slope_deg,event_mean_elevation_m,scarp_capture_rate_pct,scientific_assessment
+0,Nominal point pixel (no spatial buffer),12.7,18.2,842.1,21.0,Unreliable: Flat road/settlement pixels captured due to 1-50km news reporting uncertainty
+300,Conservative neighborhood buffer,21.4,32.8,895.4,73.7,Moderate: Captures most adjacent valley slope failures
+450,Calibrated optimal buffer (Baseline choice),26.5,41.2,918.6,94.7,Optimal: Scientifically matches documented failure scarps (25-53 deg) without excessive smoothing
+600,Wide neighborhood buffer,28.1,44.6,932.0,97.4,"Acceptable: Robust to coarse reporting, but risks incorporating distant unrelated topography"
+1000,Very wide buffer (coarse regional),29.8,48.9,954.2,100.0,Over-buffered: Topographic relief inflated by valley-to-ridge inclusion

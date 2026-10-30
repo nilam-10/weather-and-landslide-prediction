@@ -1,0 +1,16 @@
+model_id,model_name,category,trainable,parameter_count,random_seed,checkpoint_path,training_duration_sec,gpu_memory_mb,validation_early_stop_epoch
+METHOD-A-PERSISTENCE,Zero-Order Persistence,Baseline,False,0,N/A,N/A (Algorithmic),0.0,0.0,N/A
+METHOD-B-SPARSE-LK,Sparse Lucas-Kanade,Baseline,False,0,N/A,N/A (Algorithmic),0.0,0.0,N/A
+METHOD-C-DENSE-FLOW,Dense Horn-Schunck Flow,Baseline,False,0,N/A,N/A (Algorithmic),0.0,0.0,N/A
+METHOD-D-LOGISTIC-REG,Logistic Regression,Linear Baseline,True,85,42,outputs/models/phase3/logistic_regression.joblib,4.42,0.0,N/A
+METHOD-E-PYTORCH-MLP-S42,MLP (Seed 42),Neural Baseline,True,13290,42,outputs\models\phase3\mlp_seed42.pt,11.7,47.47,12
+METHOD-E-PYTORCH-MLP-S123,MLP (Seed 123),Neural Baseline,True,13290,123,outputs\models\phase3\mlp_seed123.pt,10.53,47.7,12
+METHOD-E-PYTORCH-MLP-S999,MLP (Seed 999),Neural Baseline,True,13290,999,outputs\models\phase3\mlp_seed999.pt,13.12,47.7,12
+METHOD-F-FC-LSTM-S42,FC-LSTM (Seed 42),Deep Recurrent,True,5048848,42,outputs\models\phase3\fclstm_seed42.pt,21.66,116.81,14
+METHOD-F-FC-LSTM-S123,FC-LSTM (Seed 123),Deep Recurrent,True,5048848,123,outputs\models\phase3\fclstm_seed123.pt,20.76,155.95,12
+METHOD-F-FC-LSTM-S999,FC-LSTM (Seed 999),Deep Recurrent,True,5048848,999,outputs\models\phase3\fclstm_seed999.pt,20.85,156.2,15
+METHOD-G-CONVLSTM-S42,ConvLSTM (Seed 42),Deep Recurrent,True,161034,42,outputs\models\phase3\convlstm_seed42.pt,32.6,220.26,15
+METHOD-G-CONVLSTM-S123,ConvLSTM (Seed 123),Deep Recurrent,True,161034,123,outputs\models\phase3\convlstm_seed123.pt,31.05,220.26,10
+METHOD-G-CONVLSTM-S999,ConvLSTM (Seed 999),Deep Recurrent,True,161034,999,outputs\models\phase3\convlstm_seed999.pt,31.51,220.26,13
+PRESERVED-EXPA-14D,ConvLSTM (14-Day Baseline),Preserved Historical Benchmark,False,161034,42,outputs/models/weather_convlstm/controlled_expA_14day_seed42.pt,0.0,0.0,N/A
+PRESERVED-EXPB-21D,ConvLSTM (21-Day Baseline),Preserved Historical Benchmark,False,161034,42,outputs/models/weather_convlstm/controlled_expB_21day_seed42.pt,0.0,0.0,N/A

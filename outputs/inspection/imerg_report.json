@@ -1,0 +1,74 @@
+{
+  "dataset": "GPM_3IMERGHH_07 (IMERG Final Run V07B)",
+  "date_utc": null,
+  "region": "Meghalaya, India",
+  "bounding_box_wsen": [
+    89.5,
+    24.5,
+    93.5,
+    27.0
+  ],
+  "expected_granules": 192,
+  "successfully_processed": 192,
+  "failed_granules": 0,
+  "total_subset_size_bytes": 73228510,
+  "total_subset_size_mb": 69.84,
+  "variables_extracted": [
+    "Grid/precipitation",
+    "precipitationQualityIndex",
+    "probabilityLiquidPrecipitation",
+    "randomError"
+  ],
+  "precipitation_units": "mm/hr",
+  "cadence_minutes": 30,
+  "temporal_comparison_with_insat": [
+    {
+      "insat_filename": "3RIMG_01FEB2025_0015_L1C_ASIA_MER_V01R00.h5",
+      "insat_start_utc": "01-FEB-2025T00:15:36",
+      "insat_end_utc": "01-FEB-2025T00:42:30",
+      "overlapping_imerg_files": [],
+      "overlap_count": 0,
+      "status": "UNMATCHED"
+    },
+    {
+      "insat_filename": "3RIMG_01FEB2025_0045_L1C_ASIA_MER_V01R00.h5",
+      "insat_start_utc": "01-FEB-2025T00:45:36",
+      "insat_end_utc": "01-FEB-2025T01:12:30",
+      "overlapping_imerg_files": [],
+      "overlap_count": 0,
+      "status": "UNMATCHED"
+    },
+    {
+      "insat_filename": "3RIMG_01FEB2025_0115_L1C_ASIA_MER_V01R00.h5",
+      "insat_start_utc": "01-FEB-2025T01:15:35",
+      "insat_end_utc": "01-FEB-2025T01:42:29",
+      "overlapping_imerg_files": [],
+      "overlap_count": 0,
+      "status": "UNMATCHED"
+    },
+    {
+      "insat_filename": "3RIMG_01FEB2025_0145_L1C_ASIA_MER_V01R00.h5",
+      "insat_start_utc": "01-FEB-2025T01:45:36",
+      "insat_end_utc": "01-FEB-2025T02:12:30",
+      "overlapping_imerg_files": [],
+      "overlap_count": 0,
+      "status": "UNMATCHED"
+    },
+    {
+      "insat_filename": "3RIMG_01FEB2025_0215_L1C_ASIA_MER_V01R00.h5",
+      "insat_start_utc": "01-FEB-2025T02:15:36",
+      "insat_end_utc": "01-FEB-2025T02:42:30",
+      "overlapping_imerg_files": [],
+      "overlap_count": 0,
+      "status": "UNMATCHED"
+    },
+    {
+      "insat_filename": "3RIMG_01FEB2025_0415_L1C_ASIA_MER_V01R00.h5",
+      "insat_start_utc": "01-FEB-2025T04:15:37",
+      "insat_end_utc": "01-FEB-2025T04:42:30",
+      "overlapping_imerg_files": [],
+      "overlap_count": 0,
+      "status": "UNMATCHED"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+model,training_scope,horizon,csi_occurrence,f1_occurrence,pod_occurrence,far_occurrence,brier_score,roc_auc,qpf_rmse_mm_hr,qpf_mae_mm_hr,qpf_pearson_r,notes
+Persistence Hold Baseline,Deterministic (Zero Training),+30m,0.3861,0.5571,0.5624,0.448,0.0128,0.7779,0.927,0.256,0.757,Direct lag hold
+Lucas-Kanade Optical Flow,Past 2 Frames Advection,+30m,0.3913,0.5625,0.5895,0.4622,0.0131,0.7911,0.937,0.277,0.756,rainymotion Semi-Lagrangian extrapolation
+ConvLSTM (Prior 14-Day Pilot),509 Sequences (11 Training Days),+30m,0.3677,0.5376,0.7036,0.565,0.0083,0.9737,0.679,0.124,0.648,Previous checkpoint prior to July 8-14 expansion
+ConvLSTM (Expanded 21-Day Dataset),845 Sequences (18 Training Days),+30m,0.3932,0.5644,0.6166,0.4796,0.0088,0.9561,0.857,0.449,0.778,Trained on expanded 21-day archive with genuine continuous QPF head
+Persistence Hold Baseline,Deterministic (Zero Training),+60m,0.2515,0.4019,0.4042,0.6003,0.0174,0.6977,1.194,0.363,0.599,Direct lag hold
+Lucas-Kanade Optical Flow,Past 2 Frames Advection,+60m,0.2778,0.4348,0.4914,0.6102,0.0184,0.7401,1.252,0.401,0.6,rainymotion Semi-Lagrangian extrapolation
+ConvLSTM (Prior 14-Day Pilot),509 Sequences (11 Training Days),+60m,0.2728,0.4286,0.5762,0.6588,0.0104,0.9263,0.679,0.124,0.648,Previous checkpoint prior to July 8-14 expansion
+ConvLSTM (Expanded 21-Day Dataset),845 Sequences (18 Training Days),+60m,0.2814,0.4393,0.4833,0.5974,0.0112,0.9142,1.052,0.58,0.65,Trained on expanded 21-day archive with genuine continuous QPF head
+Persistence Hold Baseline,Deterministic (Zero Training),+120m,0.1116,0.2007,0.2025,0.801,0.0231,0.5953,1.56,0.499,0.317,Direct lag hold
+Lucas-Kanade Optical Flow,Past 2 Frames Advection,+120m,0.1168,0.2092,0.2311,0.8089,0.0251,0.6084,1.602,0.533,0.326,rainymotion Semi-Lagrangian extrapolation
+ConvLSTM (Prior 14-Day Pilot),509 Sequences (11 Training Days),+120m,0.1477,0.2574,0.3549,0.798,0.0135,0.7905,0.679,0.124,0.648,Previous checkpoint prior to July 8-14 expansion
+ConvLSTM (Expanded 21-Day Dataset),845 Sequences (18 Training Days),+120m,0.1319,0.233,0.2361,0.77,0.0139,0.7575,1.261,0.559,0.358,Trained on expanded 21-day archive with genuine continuous QPF head
+Persistence Hold Baseline,Deterministic (Zero Training),+180m,0.0285,0.0554,0.0553,0.9444,0.0277,0.5206,1.755,0.578,0.139,Direct lag hold
+Lucas-Kanade Optical Flow,Past 2 Frames Advection,+180m,0.0488,0.0931,0.0873,0.9004,0.025,0.5378,1.665,0.557,0.171,rainymotion Semi-Lagrangian extrapolation
+ConvLSTM (Prior 14-Day Pilot),509 Sequences (11 Training Days),+180m,0.0528,0.1003,0.1106,0.9082,0.0151,0.6719,0.679,0.124,0.648,Previous checkpoint prior to July 8-14 expansion
+ConvLSTM (Expanded 21-Day Dataset),845 Sequences (18 Training Days),+180m,0.0253,0.0493,0.0393,0.9336,0.0151,0.6344,1.351,0.615,0.147,Trained on expanded 21-day archive with genuine continuous QPF head
+Persistence Hold Baseline,Deterministic (Zero Training),+360m,0.0036,0.0072,0.0071,0.9927,0.0293,0.4962,1.872,0.647,0.022,Direct lag hold
+Lucas-Kanade Optical Flow,Past 2 Frames Advection,+360m,0.0037,0.0074,0.0055,0.9889,0.0221,0.499,1.651,0.54,0.003,rainymotion Semi-Lagrangian extrapolation
+ConvLSTM (Prior 14-Day Pilot),509 Sequences (11 Training Days),+360m,0.0,0.0,0.0,0.0,0.0154,0.5226,0.679,0.124,0.648,Previous checkpoint prior to July 8-14 expansion
+ConvLSTM (Expanded 21-Day Dataset),845 Sequences (18 Training Days),+360m,0.0,0.0,0.0,0.0,0.0153,0.4157,1.34,0.648,0.115,Trained on expanded 21-day archive with genuine continuous QPF head

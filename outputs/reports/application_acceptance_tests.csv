@@ -1,0 +1,18 @@
+test_id,endpoint,status,http_status_code,latency_ms,verification_details
+ACC-SYS-01,/health,PASSED,200,2328.64,"GPU: NVIDIA GeForce RTX 4050 Laptop GPU, VRAM: 6140.5 MB, Steps: 336"
+ACC-META-01,/metadata,PASSED,200,4.51,"Bounds: [89.5, 24.5, 93.5, 27.0], Leads: ['30m', '60m', '120m', '180m', '360m'], Calibration: True"
+ACC-WTH-01,/layers/weather?lead=30m,PASSED,200,14.64,"ConvLSTM +30m: uncal mean=0.1206, cal mean=0.0245, cal_method=Platt scaling (Platt 1999, a=0.970, b=-3"
+ACC-WTH-02,/layers/weather?lead=60m,PASSED,200,13.67,"ConvLSTM +60m: uncal mean=0.1403, cal mean=0.0242, cal_method=Platt scaling (Platt 1999, a=0.902, b=-3"
+ACC-WTH-03,/layers/weather?lead=120m,PASSED,200,13.76,"ConvLSTM +120m: uncal mean=0.1325, cal mean=0.0186, cal_method=Platt scaling (Platt 1999, a=0.795, b=-2"
+ACC-WTH-04,/layers/weather?lead=180m,PASSED,200,13.53,"ConvLSTM +180m: uncal mean=0.1349, cal mean=0.0178, cal_method=Platt scaling (Platt 1999, a=0.757, b=-2"
+ACC-WTH-05,/layers/weather?lead=360m,PASSED,200,14.66,"ConvLSTM +360m: uncal mean=0.1597, cal mean=0.0228, cal_method=Platt scaling (Platt 1999, a=0.448, b=-2"
+ACC-WTH-06,/layers/weather?model=optical_flow,PASSED,200,6.16,"SciPy Lucas-Kanade executed: mean=0.0340, max_rain=18.57 mm/hr"
+ACC-WTH-07,/layers/weather?model=persistence,PASSED,200,4.92,"Observation Lag Hold executed: mean=0.0270, max_rain=20.22 mm/hr"
+ACC-LND-01,/layers/landslide/susceptibility,PASSED,200,98.08,"90m LSI downsampled: 173x465 grid, non-null=45317, symmetric spatial AUC=0.5913"
+ACC-LND-02,/layers/landslide/dynamic,PASSED,200,5.45,"Levels 0-3 present: counts={'low_0': 992, 'moderate_1': 8, 'high_2': 0, 'very_high_3': 0}"
+ACC-LND-03,/layers/landslide/events,PASSED,200,5.63,"GeoJSON verified: 38 rainfall-triggered features, spatial block & accuracy attributes verified"
+ACC-COL-01,/layers/colocation,PASSED,200,4.26,"Co-located cells=1, anti-fallacy notice strictly enforced"
+ACC-INS-01,/cell_inspect (Shillong Plateau),PASSED,200,3.98,"Matched [25.55, 91.85], Rain=0.39 mm/hr, LSI=0.218 (Low), Hazard=Low"
+ACC-INS-02,/cell_inspect (Sohra / Cherrapunji Escarpment),PASSED,200,3.81,"Matched [25.25, 91.75], Rain=5.75 mm/hr, LSI=0.041 (Very Low), Hazard=Low"
+ACC-INS-03,"/cell_inspect (Out of Domain: 10°N, 80°E)",PASSED,422,6.08,FastAPI schema validation rejected out-of-bounds coordinates with HTTP 422
+ACC-PRV-01,/provenance,PASSED,200,3.73,Provenance verified: 5 scientific sources with official DOIs and paper attributions

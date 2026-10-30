@@ -1,0 +1,5 @@
+split_name,calendar_period,num_half_hourly_steps,pixel_samples_per_step,total_pixel_samples,role
+Historical Training Period (2024),2024-07-01 to 2024-07-07 UTC (7 Full Days),336,1000,336000,Inter-annual generalization training (active monsoon regime 2024)
+Recent Training Period (2025),2025-07-01 to 2025-07-04 UTC (4 Full Days),192,1000,192000,Sequential pre-storm training (2025 monsoon pilot window)
+Chronological Validation Split,2025-07-05 UTC (1 Full Day),48,1000,48000,"Validation checkpoint selection, probability calibration & hyperparameter tuning"
+Held-Out Test Benchmark Split,2025-07-06 to 2025-07-07 UTC (2 Full Days),96,1000,96000,Strictly independent benchmark evaluation across all models and horizons

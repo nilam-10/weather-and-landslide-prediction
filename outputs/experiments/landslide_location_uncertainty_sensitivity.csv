@@ -1,0 +1,5 @@
+subset_name,accuracy_filter,feature_sampling_method,n_positives,n_controls,lr_mean_roc_auc,lr_mean_pr_auc,xgb_mean_roc_auc,xgb_mean_pr_auc,scientific_validity,interpretation
+All Events (Asymmetric 450m Buffer),None (all reported),ASYMMETRIC_WINDOW_MAX_ON_POSITIVES,38,190,0.9911,0.9599,0.9666,0.9135,INVALID_SAMPLING_BIAS,High AUC (0.97-0.99) is an artifact of window-max extraction on positives vs point on controls.
+All Events (Symmetric Unbuffered),None (all reported),SYMMETRIC_POINT_EXTRACTION,38,190,0.5379,0.2554,0.5913,0.2285,SCIENTIFICALLY_VALID_BASELINE,Performance drops to 0.54-0.61 due to 1-50km coordinate uncertainty in news-media reports.
+High/Moderate Confidence (<=5km) (Symmetric),<= 5km,SYMMETRIC_POINT_EXTRACTION,22,110,0.4232,0.2127,0.6131,0.2413,SCIENTIFICALLY_VALID_SUBSET,Removing coarse uncertain points shifts XGB AUC to 0.6131; proves scarp polygons are required for 90m resolution.
+High Confidence Only (<=1km) (Symmetric),<= 1km,SYMMETRIC_POINT_EXTRACTION,9,45,0.4538,0.1438,0.531,0.2302,SCIENTIFICALLY_VALID_SUBSET,Removing coarse uncertain points shifts XGB AUC to 0.5310; proves scarp polygons are required for 90m resolution.

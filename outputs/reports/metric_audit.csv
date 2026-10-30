@@ -1,0 +1,49 @@
+model_name,lead_time,metric_name,old_reported_value,recomputed_value,difference,evaluation_sample_count,evaluation_scope,verification_status,audit_notes
+2D ConvLSTM,+30m,csi,0.4242,0.416,-0.0082,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps (91,000 pixels)."
+2D ConvLSTM,+30m,pod_recall,0.5911,0.5791,-0.012,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps (91,000 pixels)."
+2D ConvLSTM,+30m,far,0.3995,0.4036,0.0041,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps (91,000 pixels)."
+2D ConvLSTM,+30m,f1,0.5957,0.5876,-0.0081,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps (91,000 pixels)."
+2D ConvLSTM,+30m,precision,0.6005,0.5964,-0.0041,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps (91,000 pixels)."
+2D ConvLSTM,+30m,brier_score,0.1122,0.1127,0.0005,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps (91,000 pixels). Uncalibrated raw probabilities with pos_weight=23.8 elevate negative-pixel penalty."
+2D ConvLSTM,+30m,roc_auc,0.9745,0.9741,-0.0004,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps (91,000 pixels)."
+2D ConvLSTM,+30m,pr_auc,0.5959,0.5876,-0.0083,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps (91,000 pixels)."
+2D ConvLSTM,+60m,csi,0.2939,0.2898,-0.0041,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps."
+2D ConvLSTM,+60m,pod_recall,0.4605,0.4537,-0.0068,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps."
+2D ConvLSTM,+60m,far,0.5518,0.5549,0.0031,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps."
+2D ConvLSTM,+60m,f1,0.4542,0.4494,-0.0048,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps."
+2D ConvLSTM,+60m,precision,0.4482,0.4451,-0.0031,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps."
+2D ConvLSTM,+60m,brier_score,0.1362,0.1366,0.0004,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps."
+2D ConvLSTM,+60m,roc_auc,0.9343,0.9306,-0.0037,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps."
+2D ConvLSTM,+60m,pr_auc,0.422,0.415,-0.007,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,"Recomputed on 94 steps (94,000 pixels); old reported on 91 steps."
+Lagged Persistence,+30m,csi,0.3997,0.3928,-0.0069,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,Lagged binary rainfall observation hold.
+Lagged Persistence,+30m,pod_recall,0.5715,0.5638,-0.0077,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,Lagged binary rainfall observation hold.
+Lagged Persistence,+30m,far,0.4294,0.4358,0.0064,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,Lagged binary rainfall observation hold.
+Lagged Persistence,+30m,f1,0.5711,0.564,-0.0071,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,Lagged binary rainfall observation hold.
+Lagged Persistence,+30m,precision,0.5706,0.5642,-0.0064,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,Lagged binary rainfall observation hold.
+Lagged Persistence,+30m,brier_score,0.0121,0.0121,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Lagged binary rainfall observation hold.
+Lagged Persistence,+60m,csi,0.2576,0.2519,-0.0057,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,Lagged binary rainfall observation hold.
+Lagged Persistence,+60m,pod_recall,0.4103,0.4043,-0.006,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,Lagged binary rainfall observation hold.
+Lagged Persistence,+60m,far,0.5909,0.5994,0.0085,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,Lagged binary rainfall observation hold.
+Lagged Persistence,+60m,f1,0.4097,0.4025,-0.0072,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,Lagged binary rainfall observation hold.
+Lagged Persistence,+60m,precision,0.4091,0.4006,-0.0085,94000,Held-out Test (July 6-7),VERIFIED_MINOR_DIFF,Lagged binary rainfall observation hold.
+Lagged Persistence,+60m,brier_score,0.0166,0.0166,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Lagged binary rainfall observation hold.
+Optical Flow (rainymotion),+30m,csi,0.3945,0.3945,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+30m,pod_recall,0.5814,0.5814,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+30m,far,0.449,0.449,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+30m,f1,0.5658,0.5658,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+60m,csi,0.2749,0.2749,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+60m,pod_recall,0.4815,0.4815,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+60m,far,0.6095,0.6095,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+60m,f1,0.4312,0.4312,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+120m,csi,0.1146,0.1146,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+120m,pod_recall,0.222,0.222,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+120m,far,0.8086,0.8086,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+120m,f1,0.2056,0.2056,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+180m,csi,0.0483,0.0483,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+180m,pod_recall,0.0856,0.0856,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+180m,far,0.9003,0.9003,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Optical Flow (rainymotion),+180m,f1,0.0921,0.0921,0.0,94000,Held-out Test (July 6-7),EXACT_MATCH,Semi-Lagrangian kinematic advection.
+Logistic Regression LSM (Asymmetric Buffer),Static,spatial_cv_roc_auc,0.9911,0.9873,-0.0038,228,3-Fold Spatial Block CV,METHODOLOGICAL_BIAS_IDENTIFIED,High score (0.987) is partly an artifact of window-max extraction on positives vs single-pixel sampling on pseudo-absences.
+XGBoost LSM (Asymmetric Buffer),Static,spatial_cv_roc_auc,0.9666,0.9683,0.0017,228,3-Fold Spatial Block CV,METHODOLOGICAL_BIAS_IDENTIFIED,High score (0.968) is partly an artifact of window-max extraction on positives vs single-pixel sampling on pseudo-absences.
+Logistic Regression LSM (Symmetric Unbuffered),Static,spatial_cv_roc_auc,,0.5401,,228,3-Fold Spatial Block CV,TRUE_SYMMETRIC_BASELINE,Extracts features at exact nominal coordinates for both. Drops to 0.5401 due to 1-50km geocoding uncertainty of news catalog.
+XGBoost LSM (Symmetric Unbuffered),Static,spatial_cv_roc_auc,,0.6135,,228,3-Fold Spatial Block CV,TRUE_SYMMETRIC_BASELINE,Extracts features at exact nominal coordinates for both. Drops to 0.6135 due to 1-50km geocoding uncertainty of news catalog.

@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "created_at_utc": "2026-10-22T11:25:35.237394+00:00",
+    "pipeline_step": "Step 8: Landslide Terrain & Antecedent Rainfall Feature Engineering",
+    "study_area": "Meghalaya, India"
+  },
+  "datasets_generated": {
+    "terrain_90m": "data\\processed\\terrain\\meghalaya_terrain_features_90m.nc4",
+    "terrain_weather_grid": "data\\processed\\terrain\\meghalaya_terrain_aligned_weather_grid.nc4",
+    "antecedent_rainfall": "data\\processed\\landslide\\antecedent_rainfall_july2025.nc4",
+    "visualization": "outputs\\landslide\\meghalaya_terrain_and_events.png",
+    "landslide_events_csv": "outputs\\landslide\\meghalaya_landslide_events.csv",
+    "landslide_inventory_audit": "outputs\\landslide\\landslide_inventory_audit.json"
+  },
+  "terrain_statistics": {
+    "elevation_range_m": [
+      -42.0,
+      1964.0
+    ],
+    "slope_range_deg": [
+      0.0,
+      79.13182067871094
+    ],
+    "meghalaya_coverage_pixels_90m": 2900242
+  },
+  "antecedent_rainfall_summary": {
+    "total_timesteps": 336,
+    "time_span": "2025-07-01T00:30:00+00:00 to 2025-07-08T00:00:00+00:00",
+    "peak_accumulations_mm": {
+      "max_6h": 113.9,
+      "max_12h": 120.4,
+      "max_24h": 145.4,
+      "max_72h": 185.1,
+      "max_7d": 224.7
+    },
+    "output_file": "data\\processed\\landslide\\antecedent_rainfall_july2025.nc4"
+  }
+}

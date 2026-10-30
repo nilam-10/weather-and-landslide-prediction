@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimodal AI Platform: Convective Nowcasting & Landslide Risk Prediction (Meghalaya)</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-blue: #38bdf8;
+      --accent-green: #4ade80;
+      --accent-orange: #fb923c;
+      --accent-red: #f87171;
+      --accent-purple: #c084fc;
+      --border-color: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navbar */
+    header {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #ffffff;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--accent-blue);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      background: #064e3b;
+      color: #6ee7b7;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: 1px solid #059669;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 8px #34d399;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* Disclaimer Banner */
+    .disclaimer-banner {
+      background: #450a0a;
+      color: #fca5a5;
+      font-size: 11px;
+      padding: 5px 16px;
+      text-align: center;
+      border-bottom: 1px solid #7f1d1d;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    /* Main Container */
+    .main-layout {
+      flex: 1;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #map {
+      flex: 1;
+      height: 100%;
+      background: #090d16;
+    }
+
+    /* Sidebar Controls & Inspector */
+    .sidebar {
+      width: 400px;
+      background: var(--bg-card);
+      border-left: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      z-index: 1000;
+      box-shadow: -4px 0 16px rgba(0,0,0,0.4);
+    }
+
+    .sidebar-section {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .sidebar-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .control-group {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 7px 10px;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-main);
+      font-size: 12px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    select:focus {
+      border-color: var(--accent-blue);
+    }
+
+    .layer-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 10px;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .layer-toggle:hover {
+      background: var(--bg-card-hover);
+    }
+
+    .layer-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .layer-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* Cell Inspector Card */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .metric-card {
+      background: var(--bg-dark);
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .metric-card.full-width {
+      grid-column: span 2;
+    }
+
+    .metric-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .metric-value {
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 2px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .tier-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* XAI Section Styles */
+    .xai-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+    }
+    .xai-bar-container {
+      margin-top: 6px;
+      margin-bottom: 8px;
+    }
+    .xai-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .xai-bar-bg {
+      width: 100%;
+      height: 6px;
+      background: #0f172a;
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      margin-bottom: 4px;
+    }
+    .xai-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+    .xai-notice-box {
+      margin-top: 10px;
+      padding: 8px 10px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 6px;
+      font-size: 10px;
+      line-height: 1.4;
+      color: #bae6fd;
+    }
+    .xai-btn {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      border: 1px solid #38bdf8;
+      color: white;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 8px;
+      width: 100%;
+    }
+    .xai-btn:hover {
+      background: linear-gradient(135deg, #0369a1, #075985);
+    }
+
+    /* Timeline Player at Bottom of Map */
+    .timeline-container {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 424px;
+      background: rgba(15, 23, 42, 0.94);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px 18px;
+      z-index: 900;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .timeline-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+
+    .timeline-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-icon {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-icon:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent-blue);
+    }
+
+    .slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border-color);
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent-blue);
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--accent-blue);
+    }
+
+    /* Dynamic Legend Box */
+    .legend-box {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(15, 23, 42, 0.94);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 12px;
+      z-index: 900;
+      font-size: 11px;
+      max-width: 250px;
+    }
+
+    .legend-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .legend-ramp {
+      height: 10px;
+      border-radius: 3px;
+      margin-bottom: 4px;
+    }
+
+    .ramp-labels {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 9px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .main-layout {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        height: 45vh;
+      }
+      .timeline-container {
+        left: 12px;
+        right: 12px;
+        bottom: 46vh;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="brand">
+      <div style="font-size: 20px;">🛰️ 🏔️</div>
+      <div>
+        <div class="brand-title">Multimodal AI Platform: Convective Nowcasting & Landslide Risk</div>
+        <div class="brand-sub">Meghalaya, Northeast India | RBU Honours Major Project (2026–27)</div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <div class="status-badge">
+        <div class="pulse"></div>
+        <span id="gpu-status">GPU: DETECTING...</span>
+      </div>
+      <a href="/provenance" target="_blank" style="text-decoration: none;">
+        <button class="btn-icon">📖 Provenance</button>
+      </a>
+      <a href="/docs" target="_blank" style="text-decoration: none;">
+        <button class="btn-icon">⚡ API Docs</button>
+      </a>
+    </div>
+  </header>
+
+  <!-- Mandatory Scientific Disclaimer Banner -->
+  <div class="disclaimer-banner">
+    ⚠️ <strong>RETROSPECTIVE RESEARCH ARCHIVE (1–7 JULY 2025):</strong> Independent convective and landslide hazard layers presented side-by-side to avoid joint-probability fallacies. Retrospective research model evaluation, NOT an operational live warning system.
+  </div>
+
+  <!-- Main View -->
+  <div class="main-layout">
+    <!-- Leaflet Map Container -->
+    <div id="map"></div>
+
+    <!-- Active Legend Overlay -->
+    <div class="legend-box" id="legend-box">
+      <div class="legend-title" id="legend-title">Convective Nowcast Probability</div>
+      <div id="legend-content"></div>
+    </div>
+
+    <!-- Timeline Slider & Playback Player -->
+    <div class="timeline-container">
+      <div class="timeline-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">ARCHIVE TIMELINE (30-MIN STEP):</span>
+          <span class="timeline-time" id="timeline-time-display">Loading pilot archive...</span>
+        </div>
+        <div class="timeline-controls">
+          <button class="btn-icon" id="btn-prev">⏮ Prev</button>
+          <button class="btn-icon" id="btn-play" style="background: #1e3a8a; border-color: #3b82f6;">▶ Play</button>
+          <button class="btn-icon" id="btn-next">Next ⏭</button>
+          <button class="btn-icon" id="btn-peak" style="background: #7c2d12; border-color: #ea580c;">⚡ Peak Storm</button>
+        </div>
+      </div>
+      <input type="range" min="0" max="335" value="316" class="slider" id="timeline-slider">
+    </div>
+
+    <!-- Sidebar Controls & Cell Inspector -->
+    <div class="sidebar">
+      
+      <!-- Weather Controls Section -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">🌧️ Convective Weather Nowcasting</div>
+
+        <div class="control-group">
+          <label>Nowcasting Model Candidate:</label>
+          <select id="model-select">
+            <option value="convlstm">Canonical MultiTask ConvLSTM (Shi et al., 2015 - Default Production)</option>
+            <option value="mlp">Spatiotemporal Deep MLP (Phase 3 Baseline)</option>
+            <option value="fclstm">Fully Connected LSTM (FC-LSTM, 5.0M params)</option>
+            <option value="logistic_regression">Spatiotemporal Logistic Regression (16 features)</option>
+            <option value="optical_flow_dense">Dense Horn-Schunck Variational Optical Flow</option>
+            <option value="optical_flow_sparse">Sparse Lucas-Kanade Optical Flow (rainymotion)</option>
+            <option value="persistence">Lagged Persistence (Zero-Skill Baseline)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label>Forecast Horizon / Lead Time:</label>
+          <select id="lead-select">
+            <option value="30m">+30 minutes (Lead 1)</option>
+            <option value="60m">+60 minutes (Lead 2)</option>
+            <option value="120m">+120 minutes (Lead 4, Kinematic limit)</option>
+            <option value="180m">+180 minutes (Lead 6, Kinematic limit)</option>
+            <option value="360m">+360 minutes (Lead 12, Physical dissipation limit)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label style="display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+            <span>Platt Probability Calibration:</span>
+            <input type="checkbox" id="chk-calibrate" style="width: auto; cursor: pointer;" checked>
+          </label>
+        </div>
+      </div>
+
+      <!-- Landslide Controls Section -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">⛰️ Landslide Risk & Susceptibility</div>
+
+        <div class="control-group">
+          <label>Landslide Susceptibility Model (90m LSI):</label>
+          <select id="landslide-model-select">
+            <option value="xgboost">XGBoost Classifier (10-Feature Morphometry, Chen & Guestrin 2016)</option>
+            <option value="random_forest">Random Forest Classifier (100 Trees, Breiman 2001)</option>
+            <option value="logistic_regression">L2-Regularized Logistic Regression (Linear Baseline)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Layer Toggles -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">🗺️ Independent Display Layers</div>
+        
+        <div class="layer-toggle" onclick="toggleLayer('weather')">
+          <div class="layer-info">
+            <div class="layer-dot" style="background: #f59e0b;"></div>
+            <span>Convective Weather Nowcast</span>
+          </div>
+          <input type="checkbox" id="chk-weather" checked>
+        </div>
+
+        <div class="layer-toggle" onclick="toggleLayer('susceptibility')">
+          <div class="layer-info">
+            <div class="layer-dot" style="background: #ef4444;"></div>
+            <span>Static Susceptibility (90m LSI)</span>
+          </div>
+          <input type="checkbox" id="chk-susceptibility" checked>
+        </div>
+
+        <div class="layer-toggle" onclick="toggleLayer('dynamic')">
+          <div class="layer-info">
+            <div class="layer-dot" style="background: #a855f7;"></div>
+            <span>Dynamic Rainfall Hazard (Custom ARI Matrix)</span>
+          </div>
+          <input type="checkbox" id="chk-dynamic">
+        </div>
+
+        <div class="layer-toggle" onclick="toggleLayer('events')">
+          <div class="layer-info">
+            <div class="layer-dot" style="background: #ffffff; border: 1px solid black;"></div>
+            <span>Verified Historical Landslides (N=38)</span>
+          </div>
+          <input type="checkbox" id="chk-events" checked>
+        </div>
+
+        <div class="layer-toggle" onclick="toggleLayer('boundary')">
+          <div class="layer-info">
+            <div class="layer-dot" style="background: #38bdf8;"></div>
+            <span>Meghalaya State Boundary</span>
+          </div>
+          <input type="checkbox" id="chk-boundary" checked>
+        </div>
+
+        <div class="layer-toggle" onclick="toggleLayer('colocation')">
+          <div class="layer-info">
+            <div class="layer-dot" style="background: #eab308;"></div>
+            <span>Boolean Co-Location Overlay</span>
+          </div>
+          <input type="checkbox" id="chk-colocation">
+        </div>
+
+        <div class="layer-toggle" onclick="toggleLayer('xai')">
+          <div class="layer-info">
+            <div class="layer-dot" style="background: #38bdf8;"></div>
+            <span>Feature Attribution Heatmap (XAI)</span>
+          </div>
+          <input type="checkbox" id="chk-xai">
+        </div>
+      </div>
+
+      <!-- Explainable AI (XAI) Nowcast Section -->
+      <div class="sidebar-section" id="xai-section">
+        <div class="sidebar-title" style="color: #38bdf8;">
+          <span>🔍 Explainable AI (XAI) Nowcast</span>
+        </div>
+        <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">
+          Inspect feature attribution maps (Sundararajan et al., 2017) and perturbation sensitivity (Zeiler &amp; Fergus, 2014) for any convective cell.
+        </p>
+
+        <div class="control-group">
+          <label>Target Cell Coordinates (click map or enter):</label>
+          <div style="display: flex; gap: 6px;">
+            <input type="text" id="xai-lat" value="25.050" style="padding: 6px; width: 50%; font-family: 'JetBrains Mono', monospace; font-size: 11px; background: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 4px; color: white;">
+            <input type="text" id="xai-lon" value="91.850" style="padding: 6px; width: 50%; font-family: 'JetBrains Mono', monospace; font-size: 11px; background: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 4px; color: white;">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>XAI Method:</label>
+          <select id="xai-method">
+            <option value="integrated_gradients">Axiomatic Integrated Gradients (Path Integral)</option>
+            <option value="occlusion">Occlusion Sensitivity (3x3 Perturbation)</option>
+          </select>
+        </div>
+
+        <div style="display: flex; gap: 8px;" class="control-group">
+          <div style="flex: 1;">
+            <label>Target Head:</label>
+            <select id="xai-target-type">
+              <option value="probability">Convective Prob</option>
+              <option value="qpf">Continuous QPF</option>
+            </select>
+          </div>
+          <div style="flex: 1;">
+            <label>Baseline:</label>
+            <select id="xai-baseline">
+              <option value="dry_clearsky">Dry Clear-Sky</option>
+              <option value="zero">Zero Normalized</option>
+              <option value="climatological">Climatology</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="xai-btn" id="btn-run-xai" onclick="runXAIExplanation()">
+          <span>⚡ Compute Cell Attribution</span>
+        </button>
+
+        <!-- XAI Results Breakdown Container -->
+        <div id="xai-results-box" style="margin-top: 10px; display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-size: 11px; font-weight: 600; color: #f8fafc;">Attribution Diagnostics:</span>
+            <span class="xai-badge" id="xai-axiom-badge" style="background: #065f46; color: #6ee7b7;">Axiom: PASS</span>
+          </div>
+
+          <!-- Modality Channel Shares -->
+          <div class="xai-bar-container">
+            <div class="xai-bar-label">
+              <span>IMERG Rain (P)</span>
+              <span id="xai-share-p">74.2%</span>
+            </div>
+            <div class="xai-bar-bg">
+              <div class="xai-bar-fill" id="xai-fill-p" style="width: 74%; background: #38bdf8;"></div>
+            </div>
+
+            <div class="xai-bar-label">
+              <span>Infrared Cloud (Tb)</span>
+              <span id="xai-share-tb">25.8%</span>
+            </div>
+            <div class="xai-bar-bg">
+              <div class="xai-bar-fill" id="xai-fill-tb" style="width: 26%; background: #fb923c;"></div>
+            </div>
+
+            <div class="xai-bar-label">
+              <span>Validity Mask (M)</span>
+              <span id="xai-share-mask">0.0%</span>
+            </div>
+            <div class="xai-bar-bg">
+              <div class="xai-bar-fill" id="xai-fill-mask" style="width: 0%; background: #4ade80;"></div>
+            </div>
+          </div>
+
+          <!-- Lookback Temporal Decay -->
+          <div style="font-size: 10px; font-weight: 600; color: var(--text-muted); margin-top: 8px; margin-bottom: 4px;">
+            Lookback Recurrent Weights (t-90m &rarr; t):
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; text-align: center;">
+            <div style="background: var(--bg-dark); padding: 4px; border-radius: 4px; border: 1px solid var(--border-color);">
+              <div style="font-size: 9px; color: var(--text-muted);">t-90m</div>
+              <div style="font-size: 11px; font-weight: 700; color: #cbd5e1;" id="xai-frame-0">8.7%</div>
+            </div>
+            <div style="background: var(--bg-dark); padding: 4px; border-radius: 4px; border: 1px solid var(--border-color);">
+              <div style="font-size: 9px; color: var(--text-muted);">t-60m</div>
+              <div style="font-size: 11px; font-weight: 700; color: #cbd5e1;" id="xai-frame-1">15.3%</div>
+            </div>
+            <div style="background: var(--bg-dark); padding: 4px; border-radius: 4px; border: 1px solid var(--border-color);">
+              <div style="font-size: 9px; color: var(--text-muted);">t-30m</div>
+              <div style="font-size: 11px; font-weight: 700; color: #cbd5e1;" id="xai-frame-2">28.6%</div>
+            </div>
+            <div style="background: var(--bg-dark); padding: 4px; border-radius: 4px; border: 1px solid var(--border-color);">
+              <div style="font-size: 9px; color: var(--text-muted);">t (curr)</div>
+              <div style="font-size: 11px; font-weight: 700; color: #38bdf8;" id="xai-frame-3">47.4%</div>
+            </div>
+          </div>
+
+          <!-- Automated Narrative Summary -->
+          <div style="margin-top: 8px; padding: 6px 8px; background: rgba(0,0,0,0.3); border-radius: 4px; border: 1px solid var(--border-color); font-size: 10px; line-height: 1.4; color: #e2e8f0;" id="xai-summary-text">
+            Awaiting analysis...
+          </div>
+
+          <!-- Mandatory Non-Causal Scientific Notice -->
+          <div class="xai-notice-box">
+            <strong>⚠️ SCIENTIFIC NOTICE:</strong> Attribution maps show model feature sensitivity and gradient-weighted association relative to reference baseline. They represent mathematical model influence, <strong>NOT confirmed physical meteorological causation</strong>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Real-Time Cell Inspector -->
+      <div class="sidebar-section" style="flex: 1;">
+        <div class="sidebar-title">🎯 Coordinate Cell Inspector</div>
+        <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 10px;">
+          Click anywhere on the map to query multimodal weather and terrain status.
+        </p>
+
+        <div class="metric-grid" id="inspector-grid">
+          <div class="metric-card">
+            <div class="metric-label">Latitude</div>
+            <div class="metric-value" id="val-lat">25.500°N</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Longitude</div>
+            <div class="metric-value" id="val-lon">91.500°E</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label">Instantaneous Rain</div>
+            <div class="metric-value" id="val-rain">-- mm/hr</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">MERGIR Cloud IR Tb</div>
+            <div class="metric-value" id="val-tb">-- K</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label">+30m Nowcast Prob</div>
+            <div class="metric-value" id="val-p30">-- %</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">+60m Nowcast Prob</div>
+            <div class="metric-value" id="val-p60">-- %</div>
+          </div>
+
+          <div class="metric-card full-width">
+            <div class="metric-label">Static Terrain Susceptibility (90m LSI)</div>
+            <div class="metric-value" id="val-lsi">--</div>
+            <div class="tier-badge" id="badge-lsi" style="background: #334155; color: white;">Awaiting Click</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label">Antecedent Rain (A)</div>
+            <div class="metric-value" id="val-arain">-- mm</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Dynamic Hazard (ARI)</div>
+            <div class="metric-value" id="val-haz">Level --</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 14px; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 6px; font-size: 11px; color: var(--text-muted);">
+          <strong>Validation Integrity:</strong>
+          <ul style="margin-left: 16px; margin-top: 4px; line-height: 1.5;">
+            <li>Zero future leakage (strict t &le; T<sub>ref</sub> cutoff)</li>
+            <li>Chronological independent test (July 12–14, 2023)</li>
+            <li>3-fold Spatial Block CV on terrain morphometry</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <script>
+    // App State
+    let currentStep = 316; // Peak monsoon event July 7, 2025
+    let isPlaying = false;
+    let playInterval = null;
+    let map = null;
+
+    // Layer Groups
+    let weatherLayerGroup = L.layerGroup();
+    let susceptibilityLayerGroup = L.layerGroup();
+    let dynamicLayerGroup = L.layerGroup();
+    let eventsLayerGroup = L.layerGroup();
+    let boundaryLayerGroup = L.layerGroup();
+    let colocationLayerGroup = L.layerGroup();
+    let xaiLayerGroup = L.layerGroup();
+
+    // Initialize Map
+    function initMap() {
+      map = L.map('map', {
+        center: [25.55, 91.50],
+        zoom: 9,
+        zoomControl: true,
+      });
+
+      // Dark Matter Base Layer
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; CARTO | NASA GPM MERGIR/IMERG | NASA SRTM',
+        maxZoom: 18,
+      }).addTo(map);
+
+      // Add Layer Groups
+      weatherLayerGroup.addTo(map);
+      susceptibilityLayerGroup.addTo(map);
+      eventsLayerGroup.addTo(map);
+      boundaryLayerGroup.addTo(map);
+      xaiLayerGroup.addTo(map);
+
+      // Map Click Event for Cell Inspector
+      map.on('click', function(e) {
+        inspectCell(e.latlng.lat, e.latlng.lng);
+      });
+    }
+
+    // Toggle Checkboxes
+    function toggleLayer(name) {
+      const chk = document.getElementById(`chk-${name}`);
+      chk.checked = !chk.checked;
+      updateLayerVisibility();
+    }
+
+    function updateLayerVisibility() {
+      const wOn = document.getElementById('chk-weather').checked;
+      const sOn = document.getElementById('chk-susceptibility').checked;
+      const dOn = document.getElementById('chk-dynamic').checked;
+      const eOn = document.getElementById('chk-events').checked;
+      const bOn = document.getElementById('chk-boundary').checked;
+      const cOn = document.getElementById('chk-colocation').checked;
+      const xOn = document.getElementById('chk-xai').checked;
+
+      if (wOn && !map.hasLayer(weatherLayerGroup)) weatherLayerGroup.addTo(map);
+      if (!wOn && map.hasLayer(weatherLayerGroup)) map.removeLayer(weatherLayerGroup);
+
+      if (sOn && !map.hasLayer(susceptibilityLayerGroup)) susceptibilityLayerGroup.addTo(map);
+      if (!sOn && map.hasLayer(susceptibilityLayerGroup)) map.removeLayer(susceptibilityLayerGroup);
+
+      if (dOn && !map.hasLayer(dynamicLayerGroup)) dynamicLayerGroup.addTo(map);
+      if (!dOn && map.hasLayer(dynamicLayerGroup)) map.removeLayer(dynamicLayerGroup);
+
+      if (eOn && !map.hasLayer(eventsLayerGroup)) eventsLayerGroup.addTo(map);
+      if (!eOn && map.hasLayer(eventsLayerGroup)) map.removeLayer(eventsLayerGroup);
+
+      if (bOn && !map.hasLayer(boundaryLayerGroup)) boundaryLayerGroup.addTo(map);
+      if (!bOn && map.hasLayer(boundaryLayerGroup)) map.removeLayer(boundaryLayerGroup);
+
+      if (cOn && !map.hasLayer(colocationLayerGroup)) colocationLayerGroup.addTo(map);
+      if (!cOn && map.hasLayer(colocationLayerGroup)) map.removeLayer(colocationLayerGroup);
+
+      if (xOn && !map.hasLayer(xaiLayerGroup)) xaiLayerGroup.addTo(map);
+      if (!xOn && map.hasLayer(xaiLayerGroup)) map.removeLayer(xaiLayerGroup);
+
+      updateLegend();
+    }
+
+    // Update Legend Box
+    function updateLegend() {
+      const wOn = document.getElementById('chk-weather').checked;
+      const sOn = document.getElementById('chk-susceptibility').checked;
+      const dOn = document.getElementById('chk-dynamic').checked;
+      const xOn = document.getElementById('chk-xai').checked;
+      const box = document.getElementById('legend-box');
+      const title = document.getElementById('legend-title');
+      const content = document.getElementById('legend-content');
+
+      if (xOn) {
+        title.innerText = "XAI Normalized Attribution";
+        content.innerHTML = `
+          <div class="legend-ramp" style="background: linear-gradient(to right, #1d4ed8, #38bdf8, #0f172a, #fbbf24, #b91c1c);"></div>
+          <div class="ramp-labels"><span>-1.0 (Inhibiting)</span><span>0.0</span><span>+1.0 (Promoting)</span></div>
+          <div style="margin-top:6px; font-size:10px; color:#94a3b8;">Diverging Path Attribution</div>
+        `;
+      } else if (wOn) {
+        title.innerText = "Convective Rain Nowcast Prob.";
+        content.innerHTML = `
+          <div class="legend-ramp" style="background: linear-gradient(to right, #ffffcc, #ffeda0, #fed976, #feb24c, #fd8d3c, #fc4e2a, #e31a1c, #bd0026);"></div>
+          <div class="ramp-labels"><span>0.0 (Low)</span><span>0.5</span><span>1.0 (High)</span></div>
+          <div style="margin-top:6px; font-size:10px; color:#94a3b8;">Probability of Rain &ge; 5 mm/hr</div>
+        `;
+      } else if (dOn) {
+        title.innerText = "Dynamic Rainfall Hazard (ARI)";
+        content.innerHTML = `
+          <div class="legend-item"><div class="legend-color" style="background:#2ca02c;"></div><span>Low Hazard (0)</span></div>
+          <div class="legend-item"><div class="legend-color" style="background:#ffeb3b;"></div><span>Moderate Hazard (1)</span></div>
+          <div class="legend-item"><div class="legend-color" style="background:#ff9800;"></div><span>High Hazard (2)</span></div>
+          <div class="legend-item"><div class="legend-color" style="background:#f44336;"></div><span>Very High Hazard (3)</span></div>
+        `;
+      } else if (sOn) {
+        const lModel = document.getElementById('landslide-model-select').value.toUpperCase();
+        title.innerText = `Static Susceptibility (${lModel})`;
+        content.innerHTML = `
+          <div class="legend-ramp" style="background: linear-gradient(to right, #2ca02c, #8bc34a, #ffeb3b, #ff9800, #d32f2f);"></div>
+          <div class="ramp-labels"><span>0.0 (Low)</span><span>0.5</span><span>1.0 (V.High)</span></div>
+          <div style="margin-top:6px; font-size:10px; color:#94a3b8;">10-Feature 90m Morphometry</div>
+        `;
+      }
+    }
+
+    // Fetch and Render Weather Layer
+    async function loadWeatherLayer() {
+      const model = document.getElementById('model-select').value;
+      const lead = document.getElementById('lead-select').value;
+      const isCalibrated = document.getElementById('chk-calibrate')?.checked ? 'true' : 'false';
+      try {
+        const res = await fetch(`/layers/weather?step=${currentStep}&model=${model}&lead=${lead}&calibrated=${isCalibrated}`);
+        const data = await res.json();
+        
+        weatherLayerGroup.clearLayers();
+        document.getElementById('timeline-time-display').innerText = data.reference_time_utc;
+
+        const lats = data.grid.latitudes;
+        const lons = data.grid.longitudes;
+        const vals = data.grid.values;
+        const rain = data.grid.rain_rate_mm_hr;
+
+        const dlat = 0.1;
+        const dlon = 0.1;
+
+        for (let r = 0; r < lats.length; r++) {
+          for (let c = 0; c < lons.length; c++) {
+            const v = vals[r][c];
+            if (v > 0.05) {
+              const color = getColorForProb(v);
+              const rect = L.rectangle(
+                [[lats[r] - dlat/2, lons[c] - dlon/2], [lats[r] + dlat/2, lons[c] + dlon/2]],
+                {
+                  color: color,
+                  weight: 0.5,
+                  fillColor: color,
+                  fillOpacity: Math.min(v * 0.85, 0.75),
+                }
+              );
+              const rainText = rain !== null ? `${rain[r][c]} mm/hr` : "Unsupported for binary classifier";
+              rect.bindTooltip(`Nowcast Prob: ${(v*100).toFixed(1)}%<br>QPF Rate: ${rainText}`);
+              weatherLayerGroup.addLayer(rect);
+            }
+          }
+        }
+      } catch (err) {
+        console.error("Error loading weather layer:", err);
+      }
+    }
+
+    // Fetch and Render Susceptibility Layer
+    async function loadSusceptibilityLayer() {
+      const model = document.getElementById('landslide-model-select').value;
+      try {
+        const res = await fetch(`/layers/landslide/susceptibility?model=${model}`);
+        const data = await res.json();
+        susceptibilityLayerGroup.clearLayers();
+
+        const lats = data.grid.latitudes;
+        const lons = data.grid.longitudes;
+        const vals = data.grid.values;
+        const dlat = Math.abs(lats[1] - lats[0]);
+        const dlon = Math.abs(lons[1] - lons[0]);
+
+        for (let r = 0; r < lats.length; r++) {
+          for (let c = 0; c < lons.length; c++) {
+            const v = vals[r][c];
+            if (v !== null && v > 0.15) {
+              const color = getColorForLSI(v);
+              const rect = L.rectangle(
+                [[lats[r] - dlat/2, lons[c] - dlon/2], [lats[r] + dlat/2, lons[c] + dlon/2]],
+                {
+                  color: color,
+                  weight: 0,
+                  fillColor: color,
+                  fillOpacity: 0.55,
+                }
+              );
+              rect.bindTooltip(`Terrain LSI (${model}): ${v.toFixed(3)}`);
+              susceptibilityLayerGroup.addLayer(rect);
+            }
+          }
+        }
+        updateLegend();
+      } catch (err) {
+        console.error("Error loading susceptibility layer:", err);
+      }
+    }
+
+    // Fetch and Render Dynamic Rainfall Hazard Layer
+    async function loadDynamicHazardLayer() {
+      try {
+        const res = await fetch(`/layers/landslide/dynamic?step=${currentStep}`);
+        const data = await res.json();
+        dynamicLayerGroup.clearLayers();
+
+        const lats = data.grid.latitudes;
+        const lons = data.grid.longitudes;
+        const haz = data.grid.hazard_levels;
+        const a_rain = data.grid.antecedent_rain_mm;
+        const dlat = 0.1;
+        const dlon = 0.1;
+        const colors = ["#2ca02c", "#ffeb3b", "#ff9800", "#f44336"];
+        const labels = ["Low", "Moderate", "High", "Very High"];
+
+        for (let r = 0; r < lats.length; r++) {
+          for (let c = 0; c < lons.length; c++) {
+            const lvl = haz[r][c];
+            if (lvl > 0) {
+              const color = colors[lvl];
+              const rect = L.rectangle(
+                [[lats[r] - dlat/2, lons[c] - dlon/2], [lats[r] + dlat/2, lons[c] + dlon/2]],
+                {
+                  color: color,
+                  weight: 1.0,
+                  fillColor: color,
+                  fillOpacity: 0.65,
+                }
+              );
+              rect.bindTooltip(`Dynamic Hazard: Level ${lvl} (${labels[lvl]})<br>Antecedent Rain: ${a_rain[r][c]} mm`);
+              dynamicLayerGroup.addLayer(rect);
+            }
+          }
+        }
+      } catch (err) {
+        console.error("Error loading dynamic hazard layer:", err);
+      }
+    }
+
+    // Fetch and Render Historical Events
+    async function loadEventsLayer() {
+      try {
+        const res = await fetch('/layers/landslide/events');
+        const data = await res.json();
+        eventsLayerGroup.clearLayers();
+
+        data.features.forEach(feat => {
+          const coords = feat.geometry.coordinates;
+          const props = feat.properties;
+
+          const marker = L.circleMarker([coords[1], coords[0]], {
+            radius: 6,
+            fillColor: "#ffffff",
+            color: "#000000",
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.9,
+          });
+
+          marker.bindPopup(`
+            <div style="font-family:'Inter',sans-serif; font-size:12px; color:#111;">
+              <strong>${props.title || 'Landslide Event'}</strong><br>
+              <strong>Date:</strong> ${props.date}<br>
+              <strong>Trigger:</strong> ${props.trigger}<br>
+              <strong>Accuracy:</strong> ${props.accuracy}<br>
+              <strong>Source:</strong> ${props.source}<br>
+              <strong>District:</strong> ${props.spatial_block}<br>
+              <strong>Local Max Slope:</strong> ${props.local_slope_max_deg}°
+            </div>
+          `);
+          eventsLayerGroup.addLayer(marker);
+        });
+      } catch (err) {
+        console.error("Error loading events layer:", err);
+      }
+    }
+
+    // Fetch and Render Boundary
+    async function loadBoundaryLayer() {
+      try {
+        const res = await fetch('/boundary');
+        const data = await res.json();
+        boundaryLayerGroup.clearLayers();
+
+        L.geoJSON(data, {
+          style: {
+            color: "#38bdf8",
+            weight: 2.5,
+            fillOpacity: 0.0,
+            dashArray: "4, 4",
+          }
+        }).addTo(boundaryLayerGroup);
+      } catch (err) {
+        console.error("Error loading boundary layer:", err);
+      }
+    }
+
+    // Inspect Cell on Map Click
+    async function inspectCell(lat, lon) {
+      document.getElementById('val-lat').innerText = lat.toFixed(3) + '°N';
+      document.getElementById('val-lon').innerText = lon.toFixed(3) + '°E';
+
+      const xLatEl = document.getElementById('xai-lat');
+      const xLonEl = document.getElementById('xai-lon');
+      if (xLatEl) xLatEl.value = lat.toFixed(3);
+      if (xLonEl) xLonEl.value = lon.toFixed(3);
+
+      try {
+        const res = await fetch(`/cell_inspect?lat=${lat}&lon=${lon}&step=${currentStep}`);
+        const data = await res.json();
+
+        const met = data.meteorological_state;
+        const lnd = data.landslide_hazard_state;
+
+        document.getElementById('val-rain').innerText = met.instantaneous_precip_mm_hr + ' mm/hr';
+        document.getElementById('val-tb').innerText = met.infrared_brightness_temp_k + ' K';
+        document.getElementById('val-p30').innerText = (met.nowcast_probabilities.lead_30min * 100).toFixed(0) + '%';
+        document.getElementById('val-p60').innerText = (met.nowcast_probabilities.lead_60min * 100).toFixed(0) + '%';
+
+        document.getElementById('val-lsi').innerText = lnd.static_susceptibility_index.toFixed(3);
+        const badge = document.getElementById('badge-lsi');
+        badge.innerText = lnd.susceptibility_tier;
+        badge.style.background = getBadgeColor(lnd.susceptibility_tier);
+
+        document.getElementById('val-arain').innerText = lnd.antecedent_rainfall_trigger_mm + ' mm';
+        document.getElementById('val-haz').innerText = `Lvl ${lnd.lhasa_dynamic_hazard_level} (${lnd.lhasa_hazard_label})`;
+      } catch (err) {
+        console.error("Error inspecting cell:", err);
+      }
+    }
+
+    // Explainable AI (XAI) Nowcast Engine
+    async function runXAIExplanation() {
+      const lat = parseFloat(document.getElementById('xai-lat').value);
+      const lon = parseFloat(document.getElementById('xai-lon').value);
+      const method = document.getElementById('xai-method').value;
+      const targetType = document.getElementById('xai-target-type').value;
+      const baseline = document.getElementById('xai-baseline').value;
+      const lead = document.getElementById('lead-select').value;
+      const btn = document.getElementById('btn-run-xai');
+
+      btn.disabled = true;
+      btn.innerHTML = "<span>⏳ Computing Attribution...</span>";
+
+      try {
+        const url = `/explain/weather?step=${currentStep}&lead=${lead}&target_type=${targetType}&method=${method}&lat=${lat}&lon=${lon}&baseline=${baseline}`;
+        const res = await fetch(url);
+        const data = await res.json();
+
+        // 1. Unhide results box
+        document.getElementById('xai-results-box').style.display = 'block';
+
+        // 2. Axiom Badge
+        const badge = document.getElementById('xai-axiom-badge');
+        if (data.completeness_proof && data.completeness_proof.completeness_verified !== undefined) {
+          const pass = data.completeness_proof.completeness_verified;
+          const err = data.completeness_proof.relative_error_pct;
+          badge.innerText = pass ? `Axiom: PASS (${err}% err)` : `Axiom: ${err}% err`;
+          badge.style.background = pass ? '#065f46' : '#991b1b';
+          badge.style.color = pass ? '#6ee7b7' : '#fca5a5';
+        } else {
+          badge.innerText = "Occlusion Sensitivity";
+          badge.style.background = "#1e3a8a";
+          badge.style.color = "#93c5fd";
+        }
+
+        // 3. Channel breakdown bars
+        const ch = data.attribution_summary.channel_shares_pct;
+        document.getElementById('xai-share-p').innerText = `${ch.precipitation_pct.toFixed(1)}%`;
+        document.getElementById('xai-fill-p').style.width = `${Math.min(ch.precipitation_pct, 100)}%`;
+
+        document.getElementById('xai-share-tb').innerText = `${ch.infrared_tb_pct.toFixed(1)}%`;
+        document.getElementById('xai-fill-tb').style.width = `${Math.min(ch.infrared_tb_pct, 100)}%`;
+
+        const mPct = ch.sensor_mask_pct !== undefined ? ch.sensor_mask_pct : (ch.validity_mask_pct || 0);
+        document.getElementById('xai-share-mask').innerText = `${mPct.toFixed(1)}%`;
+        document.getElementById('xai-fill-mask').style.width = `${Math.min(mPct, 100)}%`;
+
+        // 4. Temporal breakdown
+        const tm = data.attribution_summary.temporal_shares_pct;
+        document.getElementById('xai-frame-0').innerText = `${(tm.frame_t_minus_90m_pct || tm.t_minus_90m_pct || 0).toFixed(1)}%`;
+        document.getElementById('xai-frame-1').innerText = `${(tm.frame_t_minus_60m_pct || tm.t_minus_60m_pct || 0).toFixed(1)}%`;
+        document.getElementById('xai-frame-2').innerText = `${(tm.frame_t_minus_30m_pct || tm.t_minus_30m_pct || 0).toFixed(1)}%`;
+        document.getElementById('xai-frame-3').innerText = `${(tm.frame_t_current_pct || tm.t_current_pct || 0).toFixed(1)}%`;
+
+        // 5. Narrative summary
+        document.getElementById('xai-summary-text').innerText = data.attribution_summary.text_summary;
+
+        // 6. Render heatmap onto xaiLayerGroup
+        xaiLayerGroup.clearLayers();
+        const lats = data.grids.latitudes;
+        const lons = data.grids.longitudes;
+        const normVals = data.grids.spatial_attribution_normalized;
+        const rawVals = data.grids.spatial_attribution_raw;
+        const dlat = 0.1;
+        const dlon = 0.1;
+
+        for (let r = 0; r < lats.length; r++) {
+          for (let c = 0; c < lons.length; c++) {
+            const v = normVals[r][c]; // -1.0 to +1.0
+            if (Math.abs(v) > 0.04) {
+              const color = getColorForAttribution(v);
+              const rect = L.rectangle(
+                [[lats[r] - dlat/2, lons[c] - dlon/2], [lats[r] + dlat/2, lons[c] + dlon/2]],
+                {
+                  color: color,
+                  weight: 0.5,
+                  fillColor: color,
+                  fillOpacity: Math.min(Math.abs(v) * 0.85, 0.75),
+                }
+              );
+              rect.bindTooltip(`Attribution: ${rawVals[r][c] > 0 ? '+' : ''}${rawVals[r][c].toFixed(4)}<br>Normalized: ${(v*100).toFixed(1)}%`);
+              xaiLayerGroup.addLayer(rect);
+            }
+          }
+        }
+
+        // Add Target Cell Marker
+        const targetMarker = L.circleMarker([data.target_cell.latitude, data.target_cell.longitude], {
+          radius: 9,
+          fillColor: "#e11d48",
+          color: "#ffffff",
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.9,
+        });
+        targetMarker.bindPopup(`
+          <div style="font-family:'Inter',sans-serif; font-size:12px; color:#111;">
+            <strong>Target Cell (${data.target_cell.latitude.toFixed(2)}°N, ${data.target_cell.longitude.toFixed(2)}°E)</strong><br>
+            <strong>Lead Horizon:</strong> ${data.lead_time}<br>
+            <strong>Forecast F(x):</strong> ${data.model_output.fx} ${data.target_unit}<br>
+            <strong>Baseline F(x'):</strong> ${data.model_output.f_baseline} ${data.target_unit}<br>
+            <strong>Observed Tb:</strong> ${data.target_cell.current_tb_k} K<br>
+            <strong>Observed Rain:</strong> ${data.target_cell.current_rain_mm_hr} mm/hr
+          </div>
+        `);
+        xaiLayerGroup.addLayer(targetMarker);
+
+        // Ensure layer is active and visible
+        document.getElementById('chk-xai').checked = true;
+        if (!map.hasLayer(xaiLayerGroup)) xaiLayerGroup.addTo(map);
+        updateLegend();
+
+      } catch (err) {
+        console.error("XAI computation failed:", err);
+        alert("XAI computation failed: " + err);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = "<span>⚡ Compute Cell Attribution</span>";
+      }
+    }
+
+    function getColorForAttribution(v) {
+      if (v > 0.75) return '#b91c1c';
+      if (v > 0.50) return '#ea580c';
+      if (v > 0.25) return '#f59e0b';
+      if (v > 0.05) return '#fbbf24';
+      if (v < -0.75) return '#1d4ed8';
+      if (v < -0.50) return '#2563eb';
+      if (v < -0.25) return '#38bdf8';
+      if (v < -0.05) return '#7dd3fc';
+      return 'transparent';
+    }
+
+    // Color Helpers
+    function getColorForProb(p) {
+      if (p > 0.8) return '#bd0026';
+      if (p > 0.6) return '#fc4e2a';
+      if (p > 0.4) return '#feb24c';
+      if (p > 0.2) return '#fed976';
+      return '#ffffb2';
+    }
+
+    function getColorForLSI(s) {
+      if (s > 0.8) return '#d32f2f';
+      if (s > 0.6) return '#ff9800';
+      if (s > 0.4) return '#ffeb3b';
+      if (s > 0.2) return '#8bc34a';
+      return '#2ca02c';
+    }
+
+    function getBadgeColor(tier) {
+      switch(tier) {
+        case 'Very High': return '#dc2626';
+        case 'High': return '#ea580c';
+        case 'Moderate': return '#d97706';
+        case 'Low': return '#65a30d';
+        default: return '#16a34a';
+      }
+    }
+
+    // Controls Event Listeners
+    document.getElementById('timeline-slider').addEventListener('input', function(e) {
+      currentStep = parseInt(e.target.value);
+      loadWeatherLayer();
+      if (document.getElementById('chk-dynamic').checked) loadDynamicHazardLayer();
+    });
+
+    document.getElementById('model-select').addEventListener('change', loadWeatherLayer);
+    document.getElementById('lead-select').addEventListener('change', loadWeatherLayer);
+    document.getElementById('landslide-model-select').addEventListener('change', loadSusceptibilityLayer);
+
+    const calEl = document.getElementById('chk-calibrate');
+    if (calEl) calEl.addEventListener('change', loadWeatherLayer);
+
+    document.getElementById('btn-prev').addEventListener('click', () => {
+      if (currentStep > 0) {
+        currentStep--;
+        document.getElementById('timeline-slider').value = currentStep;
+        loadWeatherLayer();
+        if (document.getElementById('chk-dynamic').checked) loadDynamicHazardLayer();
+      }
+    });
+
+    document.getElementById('btn-next').addEventListener('click', () => {
+      if (currentStep < 335) {
+        currentStep++;
+        document.getElementById('timeline-slider').value = currentStep;
+        loadWeatherLayer();
+        if (document.getElementById('chk-dynamic').checked) loadDynamicHazardLayer();
+      }
+    });
+
+    document.getElementById('btn-peak').addEventListener('click', () => {
+      currentStep = 316; // Peak monsoon event July 7
+      document.getElementById('timeline-slider').value = currentStep;
+      loadWeatherLayer();
+      if (document.getElementById('chk-dynamic').checked) loadDynamicHazardLayer();
+    });
+
+    document.getElementById('btn-play').addEventListener('click', () => {
+      const btn = document.getElementById('btn-play');
+      if (isPlaying) {
+        clearInterval(playInterval);
+        isPlaying = false;
+        btn.innerText = "▶ Play";
+      } else {
+        isPlaying = true;
+        btn.innerText = "⏸ Pause";
+        playInterval = setInterval(() => {
+          if (currentStep < 335) {
+            currentStep++;
+          } else {
+            currentStep = 0;
+          }
+          document.getElementById('timeline-slider').value = currentStep;
+          loadWeatherLayer();
+          if (document.getElementById('chk-dynamic').checked) loadDynamicHazardLayer();
+        }, 1200);
+      }
+    });
+
+    // Check Hardware on Start
+    async function checkHealth() {
+      try {
+        const res = await fetch('/health');
+        const data = await res.json();
+        const gpu = data.hardware;
+        const txt = gpu.cuda_available ? `GPU: ${gpu.gpu_name} (${gpu.vram_total_mb} MB)` : `CPU (No CUDA)`;
+        document.getElementById('gpu-status').innerText = txt;
+      } catch (err) {
+        document.getElementById('gpu-status').innerText = "API Offline";
+      }
+    }
+
+    // Startup
+    window.addEventListener('load', () => {
+      initMap();
+      checkHealth();
+      loadBoundaryLayer();
+      loadWeatherLayer();
+      loadSusceptibilityLayer();
+      loadEventsLayer();
+      inspectCell(25.5, 91.5);
+      updateLegend();
+    });
+  </script>
+</body>
+</html>

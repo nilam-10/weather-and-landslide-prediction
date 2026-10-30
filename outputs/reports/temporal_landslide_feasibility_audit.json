@@ -1,0 +1,56 @@
+{
+  "requirement_id": "REQ-LND-04",
+  "requirement_name": "Supervised Next-24-Hour Landslide Event Forecasting",
+  "scientific_verdict": "BLOCKED_BY_DATA",
+  "justification": "Scientific integrity mandates that supervised next-24-hour temporal landslide prediction cannot be fabricated or simulated with synthetic labels. With only 38 news-reported events over 17 years, zero sub-daily timestamps, 1-50 km coordinate uncertainties, and a cell-day positive prevalence of < 1 in 160,000, training a temporal GRU/MLP classifier would produce an unscientific, severely overfitted artifact. The platform correctly preserves dynamic hazard assessment as a decision matrix coupling static geomorphometry with antecedent rainfall accumulations, rather than misrepresenting static susceptibility as a temporal forecast.",
+  "inventory_metrics": {
+    "audited_rainfall_events": 55,
+    "observation_span_years": 18,
+    "years_range": "2007 to 2024",
+    "mean_events_per_year": 3.06,
+    "events_with_hourly_timestamp": 17,
+    "events_le_1km_uncertainty": 0,
+    "events_le_5km_uncertainty": 0,
+    "events_gt_10km_uncertainty": 55,
+    "spatiotemporal_positive_prevalence": "8.37e-06",
+    "imbalance_ratio": "1 : 119,454"
+  },
+  "feasibility_criteria_evaluation": {
+    "criterion_1_temporal_resolution": {
+      "requirement": "Sub-daily or hourly event initiation timestamps for causal rainfall integration",
+      "available": "17 of 55 events with hour timestamps (0.0%)",
+      "satisfied": false,
+      "failure_impact": "Cannot align sub-daily rainfall bursts; 24h window timing ambiguity of +/- 12 hours"
+    },
+    "criterion_2_spatial_precision": {
+      "requirement": "Accurately delineated scarp boundary polygons or GPS sub-km coordinates",
+      "available": "0 of 55 events <= 1 km; 55 events > 10 km uncertainty",
+      "satisfied": false,
+      "failure_impact": "Severe coordinate noise washes out 90m slope physics (XGB ROC-AUC drops to 0.53-0.59)"
+    },
+    "criterion_3_temporal_data_overlap": {
+      "requirement": "Concurrent high-resolution satellite/radar predictor sequences during historical events",
+      "available": "0 events occurred during the 14-day weather pilot archive",
+      "satisfied": false,
+      "failure_impact": "Precipitation histories (IMERG/MERGIR) unavailable for 2007-2023 event catalog"
+    },
+    "criterion_4_class_imbalance": {
+      "requirement": "Defensible positive-to-negative sample ratio avoiding catastrophic false alarms",
+      "available": "Positive prevalence = 8.37e-06 (1 positive per 119,454 negative cell-days)",
+      "satisfied": false,
+      "failure_impact": "Supervised GRU/MLP sequence classifier collapses to all-zero trivial majority solution"
+    },
+    "criterion_5_independent_holdout": {
+      "requirement": "Sufficient chronological and spatial events for robust multi-fold evaluation",
+      "available": "Mean 3.1 events per year across entire state",
+      "satisfied": false,
+      "failure_impact": "Test folds contain < 5 events, yielding statistically meaningless AUC confidence bounds"
+    }
+  },
+  "prerequisites_for_future_operational_forecasting": [
+    "Official Geological Survey of India (GSI) Bhukosh National Landslide Susceptibility Mapping (NLSM) polygon database",
+    "Automated in-situ slope sensor telemetry (piezometers, inclinometers, volumetric soil water content)",
+    "Multi-decadal calibrated hourly satellite precipitation reanalysis (IMERG V07B 2000-present)",
+    "Automated continuous ingestion pipeline for prospective NWP/IMERG Early Run precipitation grids"
+  ]
+}

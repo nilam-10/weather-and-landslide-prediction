@@ -1,0 +1,21 @@
+{
+  "run_id": "ExpD_Seed123",
+  "config_id": "ExpD",
+  "config_name": "Combined Objective",
+  "seed": 123,
+  "architecture": "SimVPWeather",
+  "hidden_dim": 32,
+  "t_in": 4,
+  "num_leads": 5,
+  "num_translator_blocks": 3,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "epochs": 15,
+  "batch_size": 16,
+  "w_bce": 1.0,
+  "w_qpf": 0.5,
+  "w_fss": 0.5,
+  "use_weighted_l1": true,
+  "use_soft_fss": true
+}

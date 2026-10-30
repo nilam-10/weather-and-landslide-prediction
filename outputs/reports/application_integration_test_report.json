@@ -1,0 +1,22 @@
+{
+  "timestamp_utc": "2026-10-23T01:25:00Z",
+  "api_title": "Multimodal Convective Nowcasting & Landslide Risk Platform",
+  "endpoints_verified": [
+    "/health",
+    "/metadata",
+    "/layers/weather (convlstm: 30m, 60m, 120m, 180m)",
+    "/layers/weather (optical_flow: 30m)",
+    "/layers/weather (persistence: 30m)",
+    "/layers/landslide/susceptibility",
+    "/layers/landslide/dynamic",
+    "/layers/landslide/events",
+    "/layers/colocation",
+    "/cell_inspect",
+    "/provenance"
+  ],
+  "pytorch_neural_runtime": "VERIFIED_ACTIVE",
+  "optical_flow_runtime": "VERIFIED_ACTIVE",
+  "scientific_disclaimers": "PROMINENTLY_DISPLAYED",
+  "anti_fallacy_colocation_rule": "VERIFIED_INDEPENDENT_BOOLEAN_ONLY",
+  "integration_status": "ALL_PASSED"
+}

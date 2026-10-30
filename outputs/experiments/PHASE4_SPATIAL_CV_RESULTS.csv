@@ -1,0 +1,10 @@
+model_name,fold_id,test_spatial_block,uncertainty_mode,train_samples,test_samples,test_presences,test_background,accuracy,balanced_accuracy,precision,recall,specificity,f1_score,roc_auc,pr_auc,brier_score,tp,fp,fn,tn,prevalence
+Logistic Regression,Fold_1,West Garo Hills,Buffer_450m,130,98,11,87,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0121,11,0,0,87,0.1122
+Random Forest,Fold_1,West Garo Hills,Buffer_450m,130,98,11,87,0.9592,0.977,0.7333,1.0,0.954,0.8462,0.9948,0.9662,0.0379,11,4,0,83,0.1122
+XGBoost,Fold_1,West Garo Hills,Buffer_450m,130,98,11,87,0.9286,0.9598,0.6111,1.0,0.9195,0.7586,0.9916,0.9293,0.046,11,7,0,80,0.1122
+Logistic Regression,Fold_2,Central Khasi Hills,Buffer_450m,157,71,17,54,0.9155,0.8437,0.9231,0.7059,0.9815,0.8,0.9826,0.9164,0.0503,12,1,5,53,0.2394
+Random Forest,Fold_2,Central Khasi Hills,Buffer_450m,157,71,17,54,0.9155,0.8437,0.9231,0.7059,0.9815,0.8,0.9695,0.9174,0.0631,12,1,5,53,0.2394
+XGBoost,Fold_2,Central Khasi Hills,Buffer_450m,157,71,17,54,0.9155,0.8437,0.9231,0.7059,0.9815,0.8,0.9804,0.941,0.0603,12,1,5,53,0.2394
+Logistic Regression,Fold_3,East Jaintia Hills,Buffer_450m,169,59,10,49,0.9492,0.8898,0.8889,0.8,0.9796,0.8421,0.9878,0.948,0.039,8,1,2,48,0.1695
+Random Forest,Fold_3,East Jaintia Hills,Buffer_450m,169,59,10,49,0.8983,0.7,1.0,0.4,1.0,0.5714,0.9571,0.8332,0.07,4,0,6,49,0.1695
+XGBoost,Fold_3,East Jaintia Hills,Buffer_450m,169,59,10,49,0.9153,0.75,1.0,0.5,1.0,0.6667,0.9449,0.8442,0.0628,5,0,5,49,0.1695

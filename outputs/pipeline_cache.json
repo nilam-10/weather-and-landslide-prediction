@@ -1,0 +1,21 @@
+{
+  "sample_clip.mp4": {
+    "id": "sample_clip.mp4",
+    "name": "sample_clip.mp4",
+    "local_path": "D:\\Downloads\\honours\\gdrive_video_pipeline\\tests\\sample_clip.mp4",
+    "size_bytes": 32235,
+    "size_mb": 0.03,
+    "drive_link": "D:\\Downloads\\honours\\gdrive_video_pipeline\\tests\\sample_clip.mp4",
+    "source": "local_sync",
+    "duration_sec": 3.0,
+    "duration_formatted": "00:03",
+    "transcript": "",
+    "language": "cy",
+    "executive_summary": "No transcript available.",
+    "conclusions": "N/A",
+    "important_points": "N/A",
+    "action_items": "N/A",
+    "topics": "N/A",
+    "processed_at": "2026-10-19 19:41"
+  }
+}

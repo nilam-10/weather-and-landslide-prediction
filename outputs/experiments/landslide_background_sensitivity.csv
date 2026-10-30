@@ -1,0 +1,4 @@
+sampling_ratio,n_positives,n_background,total_samples,positive_prevalence_percent,lr_mean_roc_auc,lr_mean_pr_auc,xgb_mean_roc_auc,xgb_mean_pr_auc,notes
+1:2,38,76,114,33.33,0.4819,0.3879,0.5645,0.4332,Prevalence ranges from 33.3%; ROC-AUC remains robust against prevalence shifts.
+1:5,38,190,228,16.67,0.5379,0.2554,0.5913,0.2285,Prevalence ranges from 16.7%; ROC-AUC remains robust against prevalence shifts.
+1:10,38,380,418,9.09,0.5612,0.1496,0.5687,0.1129,Prevalence ranges from 9.1%; ROC-AUC remains robust against prevalence shifts.

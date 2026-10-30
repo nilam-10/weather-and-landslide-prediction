@@ -1,0 +1,103 @@
+{
+  "pipeline": "Multimodal Weather Alignment (MERGIR & IMERG V07B)",
+  "source": "mergir",
+  "pilot_period_utc": {
+    "start_date": "2025-07-01",
+    "end_date": "2025-07-07",
+    "number_of_days": 7
+  },
+  "study_region": {
+    "name": "Meghalaya, India",
+    "bounding_box_wsen": [
+      89.5,
+      24.5,
+      93.5,
+      27.0
+    ],
+    "grid_resolution_deg": 0.1,
+    "grid_rows": 25,
+    "grid_cols": 40
+  },
+  "observation_counts": {
+    "total_timeline_steps": 336,
+    "satellite_available_steps": 336,
+    "satellite_gap_steps": 0,
+    "satellite_availability_percent": 100.0
+  },
+  "anti_leakage_causality": {
+    "audit_passed": true,
+    "rule": "input rainfall measurement interval strictly finished prior to forecast reference time",
+    "future_information_leakage": "ZERO (VERIFIED)"
+  },
+  "scientific_caveat": "MERGIR itself is one of the observational inputs used in the IMERG retrieval system, so evaluation against IMERG is proxy-label evaluation, not independent ground-truth validation.",
+  "processed_storage": {
+    "daily_netcdf_files": 7,
+    "total_processed_bytes": 2243356,
+    "total_processed_mb": 2.14
+  },
+  "daily_summaries": [
+    {
+      "date": "2025-07-01",
+      "filename": "aligned_weather_mergir_20250701.nc4",
+      "file_size_bytes": 334010,
+      "total_slots": 48,
+      "satellite_available": 48,
+      "satellite_gap": 0,
+      "anti_leakage_passed": true
+    },
+    {
+      "date": "2025-07-02",
+      "filename": "aligned_weather_mergir_20250702.nc4",
+      "file_size_bytes": 324447,
+      "total_slots": 48,
+      "satellite_available": 48,
+      "satellite_gap": 0,
+      "anti_leakage_passed": true
+    },
+    {
+      "date": "2025-07-03",
+      "filename": "aligned_weather_mergir_20250703.nc4",
+      "file_size_bytes": 305120,
+      "total_slots": 48,
+      "satellite_available": 48,
+      "satellite_gap": 0,
+      "anti_leakage_passed": true
+    },
+    {
+      "date": "2025-07-04",
+      "filename": "aligned_weather_mergir_20250704.nc4",
+      "file_size_bytes": 353386,
+      "total_slots": 48,
+      "satellite_available": 48,
+      "satellite_gap": 0,
+      "anti_leakage_passed": true
+    },
+    {
+      "date": "2025-07-05",
+      "filename": "aligned_weather_mergir_20250705.nc4",
+      "file_size_bytes": 339728,
+      "total_slots": 48,
+      "satellite_available": 48,
+      "satellite_gap": 0,
+      "anti_leakage_passed": true
+    },
+    {
+      "date": "2025-07-06",
+      "filename": "aligned_weather_mergir_20250706.nc4",
+      "file_size_bytes": 305299,
+      "total_slots": 48,
+      "satellite_available": 48,
+      "satellite_gap": 0,
+      "anti_leakage_passed": true
+    },
+    {
+      "date": "2025-07-07",
+      "filename": "aligned_weather_mergir_20250707.nc4",
+      "file_size_bytes": 281366,
+      "total_slots": 48,
+      "satellite_available": 48,
+      "satellite_gap": 0,
+      "anti_leakage_passed": true
+    }
+  ]
+}

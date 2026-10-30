@@ -1,0 +1,19 @@
+item_id,requirement,status,verification_details
+1,Homepage & Map Loading,PASS,"HTTP 200, HTML contains map container and Leaflet assets"
+2,Meghalaya Boundary Layer,PASS,GeoJSON loaded (12517 boundary vertices)
+3,Weather Model Selection (7 Models),PASS,All 7 models executed without error (25x40 grid returned for each)
+4,Forecast Lead Selection (5 Leads),PASS,All 5 leads (+30m to +360m) verified with valid horizons
+5,Reference Date/Time Slider,PASS,Step 100 correctly mapped to 2025-07-03T02:30:00+00:00
+6,ConvLSTM Probability Grid,PASS,"Max probability 0.9384 within valid [0, 1] range"
+7,Continuous QPF Display,PASS,Continuous QPF max: 9.69 mm/hr
+8,Platt Probability Calibration,PASS,"Raw mean: 0.0601, Calibrated mean: 0.0070 (Shift: 0.0531)"
+9,Static Susceptibility Models (3 Models),PASS,"173x465 grid served for all 3 models (xgboost: 0.591 AUC, random_forest: 0.584 AUC, logistic_regression: 0.572 AUC)"
+10,Dynamic Rainfall Hazard Map,PASS,"Step 316: 8 cells at Moderate hazard (Level 1), 0 High/Very High (Corrected)"
+11,Historic Event Markers,PASS,38 verified rainfall events strictly within Meghalaya polygon
+12,Model Provenance & Citations,PASS,"5 data sources cited with DOIs, 11 scientific model citations"
+13,Legend & Units Display,PASS,"Units displayed: mm/hr (rain rate), [0-1] (probability), K (brightness temp), meters (elevation/relief)"
+14,Cell Inspection & Readouts,PASS,"Queried (25.55, 91.50): Rain=0.42 mm/hr, LSI=0.115"
+15,Error Handling & Input Validation,PASS,Returned expected HTTP 422 validation error on invalid coordinates
+16,Desktop & Mobile Responsiveness,PASS,CSS media query @media (max-width: 768px) verified for flexible viewport stacking
+17,Layer Switching Independence,PASS,Leaflet layerGroup.clearLayers() invoked before every asynchronous redraw
+18,Out-of-Range Timeline Bounds,PASS,Returned expected HTTP 422 for step index 999 (valid range 0-335)

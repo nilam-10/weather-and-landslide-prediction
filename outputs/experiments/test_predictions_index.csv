@@ -1,0 +1,6 @@
+prediction_id,model_name,checkpoint_path,eval_period,horizon,test_samples,test_pixels,raw_csi,calibrated_csi,raw_brier,calibrated_brier,storage_format
+PRED-WTH-001,MultiHorizonWeatherConvLSTM,outputs/models/weather_convlstm/multiyear_convlstm_model.pt,2025-07-06 to 2025-07-07 UTC,+30m,85,85000,0.4168,0.3677,0.0322,0.0083,PyTorch tensor dict / HDF5 / NetCDF
+PRED-WTH-002,MultiHorizonWeatherConvLSTM,outputs/models/weather_convlstm/multiyear_convlstm_model.pt,2025-07-06 to 2025-07-07 UTC,+60m,85,85000,0.31,0.2728,0.046,0.0104,PyTorch tensor dict / HDF5 / NetCDF
+PRED-WTH-003,MultiHorizonWeatherConvLSTM,outputs/models/weather_convlstm/multiyear_convlstm_model.pt,2025-07-06 to 2025-07-07 UTC,+120m,85,85000,0.1449,0.1477,0.0781,0.0135,PyTorch tensor dict / HDF5 / NetCDF
+PRED-WTH-004,MultiHorizonWeatherConvLSTM,outputs/models/weather_convlstm/multiyear_convlstm_model.pt,2025-07-06 to 2025-07-07 UTC,+180m,85,85000,0.0518,0.0528,0.0968,0.0151,PyTorch tensor dict / HDF5 / NetCDF
+PRED-WTH-005,MultiHorizonWeatherConvLSTM,outputs/models/weather_convlstm/multiyear_convlstm_model.pt,2025-07-06 to 2025-07-07 UTC,+360m,85,85000,0.0032,0.0,0.1655,0.0154,PyTorch tensor dict / HDF5 / NetCDF

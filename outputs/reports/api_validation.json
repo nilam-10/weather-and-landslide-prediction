@@ -1,0 +1,145 @@
+{
+  "timestamp_utc": "2026-10-23T19:23:57.730733+00:00",
+  "total_tests": 17,
+  "passed_tests": 17,
+  "failed_tests": 0,
+  "test_suites": {},
+  "tests": [
+    {
+      "test_id": "ACC-SYS-01",
+      "endpoint": "/health",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 2328.64,
+      "verification_details": "GPU: NVIDIA GeForce RTX 4050 Laptop GPU, VRAM: 6140.5 MB, Steps: 336"
+    },
+    {
+      "test_id": "ACC-META-01",
+      "endpoint": "/metadata",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 4.51,
+      "verification_details": "Bounds: [89.5, 24.5, 93.5, 27.0], Leads: ['30m', '60m', '120m', '180m', '360m'], Calibration: True"
+    },
+    {
+      "test_id": "ACC-WTH-01",
+      "endpoint": "/layers/weather?lead=30m",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 14.64,
+      "verification_details": "ConvLSTM +30m: uncal mean=0.1206, cal mean=0.0245, cal_method=Platt scaling (Platt 1999, a=0.970, b=-3"
+    },
+    {
+      "test_id": "ACC-WTH-02",
+      "endpoint": "/layers/weather?lead=60m",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 13.67,
+      "verification_details": "ConvLSTM +60m: uncal mean=0.1403, cal mean=0.0242, cal_method=Platt scaling (Platt 1999, a=0.902, b=-3"
+    },
+    {
+      "test_id": "ACC-WTH-03",
+      "endpoint": "/layers/weather?lead=120m",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 13.76,
+      "verification_details": "ConvLSTM +120m: uncal mean=0.1325, cal mean=0.0186, cal_method=Platt scaling (Platt 1999, a=0.795, b=-2"
+    },
+    {
+      "test_id": "ACC-WTH-04",
+      "endpoint": "/layers/weather?lead=180m",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 13.53,
+      "verification_details": "ConvLSTM +180m: uncal mean=0.1349, cal mean=0.0178, cal_method=Platt scaling (Platt 1999, a=0.757, b=-2"
+    },
+    {
+      "test_id": "ACC-WTH-05",
+      "endpoint": "/layers/weather?lead=360m",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 14.66,
+      "verification_details": "ConvLSTM +360m: uncal mean=0.1597, cal mean=0.0228, cal_method=Platt scaling (Platt 1999, a=0.448, b=-2"
+    },
+    {
+      "test_id": "ACC-WTH-06",
+      "endpoint": "/layers/weather?model=optical_flow",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 6.16,
+      "verification_details": "SciPy Lucas-Kanade executed: mean=0.0340, max_rain=18.57 mm/hr"
+    },
+    {
+      "test_id": "ACC-WTH-07",
+      "endpoint": "/layers/weather?model=persistence",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 4.92,
+      "verification_details": "Observation Lag Hold executed: mean=0.0270, max_rain=20.22 mm/hr"
+    },
+    {
+      "test_id": "ACC-LND-01",
+      "endpoint": "/layers/landslide/susceptibility",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 98.08,
+      "verification_details": "90m LSI downsampled: 173x465 grid, non-null=45317, symmetric spatial AUC=0.5913"
+    },
+    {
+      "test_id": "ACC-LND-02",
+      "endpoint": "/layers/landslide/dynamic",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 5.45,
+      "verification_details": "Levels 0-3 present: counts={'low_0': 992, 'moderate_1': 8, 'high_2': 0, 'very_high_3': 0}"
+    },
+    {
+      "test_id": "ACC-LND-03",
+      "endpoint": "/layers/landslide/events",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 5.63,
+      "verification_details": "GeoJSON verified: 38 rainfall-triggered features, spatial block & accuracy attributes verified"
+    },
+    {
+      "test_id": "ACC-COL-01",
+      "endpoint": "/layers/colocation",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 4.26,
+      "verification_details": "Co-located cells=1, anti-fallacy notice strictly enforced"
+    },
+    {
+      "test_id": "ACC-INS-01",
+      "endpoint": "/cell_inspect (Shillong Plateau)",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 3.98,
+      "verification_details": "Matched [25.55, 91.85], Rain=0.39 mm/hr, LSI=0.218 (Low), Hazard=Low"
+    },
+    {
+      "test_id": "ACC-INS-02",
+      "endpoint": "/cell_inspect (Sohra / Cherrapunji Escarpment)",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 3.81,
+      "verification_details": "Matched [25.25, 91.75], Rain=5.75 mm/hr, LSI=0.041 (Very Low), Hazard=Low"
+    },
+    {
+      "test_id": "ACC-INS-03",
+      "endpoint": "/cell_inspect (Out of Domain: 10\u00b0N, 80\u00b0E)",
+      "status": "PASSED",
+      "http_status_code": 422,
+      "latency_ms": 6.08,
+      "verification_details": "FastAPI schema validation rejected out-of-bounds coordinates with HTTP 422"
+    },
+    {
+      "test_id": "ACC-PRV-01",
+      "endpoint": "/provenance",
+      "status": "PASSED",
+      "http_status_code": 200,
+      "latency_ms": 3.73,
+      "verification_details": "Provenance verified: 5 scientific sources with official DOIs and paper attributions"
+    }
+  ]
+}

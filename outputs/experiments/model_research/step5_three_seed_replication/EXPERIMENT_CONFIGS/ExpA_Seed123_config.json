@@ -1,0 +1,21 @@
+{
+  "run_id": "ExpA_Seed123",
+  "config_id": "ExpA",
+  "config_name": "Baseline Control",
+  "seed": 123,
+  "architecture": "SimVPWeather",
+  "hidden_dim": 32,
+  "t_in": 4,
+  "num_leads": 5,
+  "num_translator_blocks": 3,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "epochs": 15,
+  "batch_size": 16,
+  "w_bce": 1.0,
+  "w_qpf": 0.5,
+  "w_fss": 0.0,
+  "use_weighted_l1": false,
+  "use_soft_fss": false
+}

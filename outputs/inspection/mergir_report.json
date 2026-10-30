@@ -1,0 +1,21 @@
+{
+  "dataset": "GPM_MERGIR V1 (NOAA/NCEP/CPC Merged IR)",
+  "date_range_utc": "2023-07-08 to 2023-07-14",
+  "region": "Meghalaya, India",
+  "bounding_box_wsen": [
+    89.5,
+    24.5,
+    93.5,
+    27.0
+  ],
+  "expected_hourly_granules": 168,
+  "expected_half_hourly_intervals": 336,
+  "processed_subset_files": 2345,
+  "total_subset_size_bytes": 40519396,
+  "total_subset_size_mb": 38.64,
+  "variable_extracted": "Tb (Infrared Brightness Temperature)",
+  "units": "K",
+  "native_resolution": "~4 km",
+  "temporal_cadence_minutes": 30,
+  "proxy_caveat": "MERGIR is an observational input to IMERG retrieval; evaluation against IMERG is proxy-label evaluation, not independent ground-truth validation."
+}

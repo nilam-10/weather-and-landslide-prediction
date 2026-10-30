@@ -1,0 +1,49 @@
+{
+  "pipeline": "Multimodal Weather Alignment (INSAT & IMERG V07B)",
+  "source": "insat",
+  "pilot_period_utc": {
+    "start_date": "2025-02-01",
+    "end_date": "2025-02-01",
+    "number_of_days": 1
+  },
+  "study_region": {
+    "name": "Meghalaya, India",
+    "bounding_box_wsen": [
+      89.5,
+      24.5,
+      93.5,
+      27.0
+    ],
+    "grid_resolution_deg": 0.1,
+    "grid_rows": 25,
+    "grid_cols": 40
+  },
+  "observation_counts": {
+    "total_timeline_steps": 9,
+    "satellite_available_steps": 6,
+    "satellite_gap_steps": 3,
+    "satellite_availability_percent": 66.67
+  },
+  "anti_leakage_causality": {
+    "audit_passed": true,
+    "rule": "input rainfall measurement interval strictly finished prior to forecast reference time",
+    "future_information_leakage": "ZERO (VERIFIED)"
+  },
+  "scientific_caveat": "MERGIR itself is one of the observational inputs used in the IMERG retrieval system, so evaluation against IMERG is proxy-label evaluation, not independent ground-truth validation.",
+  "processed_storage": {
+    "daily_netcdf_files": 1,
+    "total_processed_bytes": 58698,
+    "total_processed_mb": 0.06
+  },
+  "daily_summaries": [
+    {
+      "date": "2025-02-01",
+      "filename": "aligned_weather_insat_20250201.nc4",
+      "file_size_bytes": 58698,
+      "total_slots": 9,
+      "satellite_available": 6,
+      "satellite_gap": 3,
+      "anti_leakage_passed": true
+    }
+  ]
+}

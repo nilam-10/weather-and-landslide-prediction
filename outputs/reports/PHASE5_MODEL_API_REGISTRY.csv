@@ -1,0 +1,11 @@
+model_id,name,domain,type,parameters,checkpoint,default_status,metrics_30m_csi,metrics_spatial_auc
+W-01,Canonical MultiTask ConvLSTM,Weather Nowcasting,Deep Recurrent CNN,161034,outputs/models/phase3/convlstm_seed42.pt,PRODUCTION_DEFAULT,0.5611,
+W-02,Spatiotemporal Deep MLP,Weather Nowcasting,Multi-Head 1x1 CNN,13290,outputs/models/phase3/mlp_seed42.pt,SUPPORTED_BASELINE,0.5595,
+W-03,Fully Connected LSTM (FC-LSTM),Weather Nowcasting,Flattened Recurrent,5048848,outputs/models/phase3/fclstm_seed42.pt,SUPPORTED_BASELINE,0.0235,
+W-04,Spatiotemporal Logistic Regression,Weather Nowcasting,Linear Classifier (SGD),85,outputs/models/phase3/logistic_regression.joblib,SUPPORTED_BASELINE,0.49,
+W-05,Dense Horn-Schunck Optical Flow,Weather Nowcasting,Variational Kinematic,0,In-Memory Algorithm,SUPPORTED_BASELINE,0.4467,
+W-06,Sparse Lucas-Kanade Optical Flow,Weather Nowcasting,Semi-Lagrangian Kinematic,0,In-Memory Algorithm,SUPPORTED_BASELINE,0.4796,
+W-07,Lagged Persistence,Weather Nowcasting,Zero-Skill Hold,0,Observation Hold,SUPPORTED_BASELINE,0.549,
+L-01,XGBoost Classifier,Landslide Susceptibility,Gradient Boosted Trees,"100 trees, max_depth 4",outputs/models/landslide_susceptibility/xgboost_spatial_cv.joblib,PRODUCTION_DEFAULT,,0.5913
+L-02,Random Forest Classifier,Landslide Susceptibility,Ensemble Decision Trees,"100 trees, max_depth 5",outputs/models/landslide_susceptibility/random_forest_spatial_cv.joblib,SUPPORTED_BASELINE,,0.5842
+L-03,L2-Regularized Logistic Regression,Landslide Susceptibility,Linear Logistic Model,"C=1.0, 10 coefficients",outputs/models/landslide_susceptibility/logistic_regression_spatial_cv.joblib,SUPPORTED_BASELINE,,0.5721

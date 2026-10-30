@@ -1,0 +1,43 @@
+{
+  "number_of_frames": 6,
+  "inspection_bbox_wsen": [
+    89.5,
+    24.7,
+    93.3,
+    26.5
+  ],
+  "dataset": "INSAT-3DR IMAGER L1C Asia Mercator",
+  "note": "Preview is a research inspection only. Bounding rectangle is not the final Meghalaya polygon.",
+  "time_intervals": [
+    {
+      "before": "3RIMG_01FEB2025_0015_L1C_ASIA_MER_V01R00.h5",
+      "after": "3RIMG_01FEB2025_0045_L1C_ASIA_MER_V01R00.h5",
+      "minutes": 30.0,
+      "gap_over_45min": false
+    },
+    {
+      "before": "3RIMG_01FEB2025_0045_L1C_ASIA_MER_V01R00.h5",
+      "after": "3RIMG_01FEB2025_0115_L1C_ASIA_MER_V01R00.h5",
+      "minutes": 29.98,
+      "gap_over_45min": false
+    },
+    {
+      "before": "3RIMG_01FEB2025_0115_L1C_ASIA_MER_V01R00.h5",
+      "after": "3RIMG_01FEB2025_0145_L1C_ASIA_MER_V01R00.h5",
+      "minutes": 30.02,
+      "gap_over_45min": false
+    },
+    {
+      "before": "3RIMG_01FEB2025_0145_L1C_ASIA_MER_V01R00.h5",
+      "after": "3RIMG_01FEB2025_0215_L1C_ASIA_MER_V01R00.h5",
+      "minutes": 30.0,
+      "gap_over_45min": false
+    },
+    {
+      "before": "3RIMG_01FEB2025_0215_L1C_ASIA_MER_V01R00.h5",
+      "after": "3RIMG_01FEB2025_0415_L1C_ASIA_MER_V01R00.h5",
+      "minutes": 120.02,
+      "gap_over_45min": true
+    }
+  ]
+}

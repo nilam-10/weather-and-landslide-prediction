@@ -1,0 +1,16 @@
+experiment_id,method,target_type,lead_time,cell_name,cell_row,cell_col,baseline_type,f_input,f_baseline,delta_f,sum_attribution,completeness_error_abs,completeness_error_pct,completeness_status,adebayo_pearson_r,adebayo_status,cross_method_r
+EXP_VAL_COMPLETENESS_PROB_30M,integrated_gradients,probability,30m,Meghalaya Convective Core,5,23,dry_clearsky,0.409,-4.2756,4.6846,4.616,0.0685,1.46,PASS,N/A,N/A,N/A
+EXP_VAL_COMPLETENESS_QPF_30M,integrated_gradients,qpf,30m,Meghalaya Convective Core,5,23,dry_clearsky,5.5072,0.003,5.5042,5.5044,0.0002,0.003,PASS,N/A,N/A,N/A
+EXP_VAL_COMPLETENESS_PROB_60M,integrated_gradients,probability,60m,Meghalaya Convective Core,5,23,dry_clearsky,-0.2365,-5.0785,4.8419,4.746,0.0959,1.98,PASS,N/A,N/A,N/A
+EXP_VAL_COMPLETENESS_QPF_60M,integrated_gradients,qpf,60m,Meghalaya Convective Core,5,23,dry_clearsky,4.4867,0.0016,4.485,4.587,0.102,2.274,PASS,N/A,N/A,N/A
+EXP_VAL_COMPLETENESS_PROB_120M,integrated_gradients,probability,120m,Meghalaya Convective Core,5,23,dry_clearsky,-1.2604,-7.137,5.8765,5.43,0.4465,7.6,PASS,N/A,N/A,N/A
+EXP_VAL_COMPLETENESS_QPF_120M,integrated_gradients,qpf,120m,Meghalaya Convective Core,5,23,dry_clearsky,2.8202,0.0029,2.8173,2.8269,0.0097,0.343,PASS,N/A,N/A,N/A
+EXP_VAL_COMPLETENESS_PROB_180M,integrated_gradients,probability,180m,Meghalaya Convective Core,5,23,dry_clearsky,-1.6176,-6.3053,4.6877,4.6186,0.0691,1.47,PASS,N/A,N/A,N/A
+EXP_VAL_COMPLETENESS_QPF_180M,integrated_gradients,qpf,180m,Meghalaya Convective Core,5,23,dry_clearsky,1.8664,0.0074,1.859,1.8806,0.0216,1.163,PASS,N/A,N/A,N/A
+EXP_VAL_COMPLETENESS_PROB_360M,integrated_gradients,probability,360m,Meghalaya Convective Core,5,23,dry_clearsky,-2.3268,-4.1949,1.8681,1.8942,0.0261,1.4,PASS,N/A,N/A,N/A
+EXP_VAL_COMPLETENESS_QPF_360M,integrated_gradients,qpf,360m,Meghalaya Convective Core,5,23,dry_clearsky,0.7758,0.0838,0.6921,0.6804,0.0117,1.689,PASS,N/A,N/A,N/A
+EXP_VAL_ADEBAYO_SANITY_CHECK,integrated_gradients,probability,30m,Meghalaya Convective Core,5,23,dry_clearsky,N/A,N/A,N/A,N/A,N/A,N/A,N/A,-0.4905,PASS,N/A
+EXP_VAL_CROSS_METHOD_AGREEMENT,ig_vs_occlusion,probability,30m,Meghalaya Convective Core,5,23,dry_clearsky,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0.3778
+EXP_VAL_BASELINE_DRY_CLEARSKY,integrated_gradients,probability,30m,Meghalaya Convective Core,5,23,dry_clearsky,0.409,-4.2756,4.6846,4.9002,0.2157,4.6,PASS,N/A,N/A,N/A
+EXP_VAL_BASELINE_ZERO,integrated_gradients,probability,30m,Meghalaya Convective Core,5,23,zero,0.409,-4.8855,5.2944,5.1062,0.1882,3.56,PASS,N/A,N/A,N/A
+EXP_VAL_BASELINE_CLIMATOLOGICAL,integrated_gradients,probability,30m,Meghalaya Convective Core,5,23,climatological,0.409,-4.4044,4.8134,5.1243,0.3109,6.46,PASS,N/A,N/A,N/A

@@ -1,0 +1,9 @@
+feature_name,logistic_regression_standardized_coef,xgboost_feature_importance_gain,geomorphic_role
+elevation_mean,0.2542,0.1494,Orogenic elevation / precipitation gradient
+slope_mean,-0.3885,0.1191,Primary driver of shear stress
+slope_max,-0.7508,0.0898,Primary driver of shear stress
+relief,0.8057,0.1366,Topographic dissection / valley convergence
+slope_std,0.3129,0.152,Primary driver of shear stress
+aspect_northness,0.2913,0.1345,Orogenic elevation / precipitation gradient
+aspect_eastness,0.2442,0.1159,Orogenic elevation / precipitation gradient
+curvature_mean,0.2778,0.1026,Topographic dissection / valley convergence

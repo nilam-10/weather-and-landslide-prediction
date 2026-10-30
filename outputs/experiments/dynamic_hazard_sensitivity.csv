@@ -1,0 +1,5 @@
+weight_regime,weight_p24h,weight_p72h,formula,mean_antecedent_mm,max_antecedent_mm,low_hazard_cells,low_hazard_percent,moderate_hazard_cells,moderate_hazard_percent,high_hazard_cells,high_hazard_percent,very_high_hazard_cells,very_high_hazard_percent,peak_hazard_coverage_percent,interpretation
+Short-Term Dominant (Flash Landslides),0.8,0.2,0.8 * P_24h + 0.2 * P_72h,40.93,88.86,79,95.18,4,4.82,0,0.0,0,0.0,0.0,Short-Term Dominant (Flash Landslides): 0.0% of state territory exceeds High/Very-High advisory.
+Baseline Heuristic (Author Decision Matrix),0.6,0.4,0.6 * P_24h + 0.4 * P_72h,51.56,101.57,76,91.57,7,8.43,0,0.0,0,0.0,0.0,Baseline Heuristic (Author Decision Matrix): 0.0% of state territory exceeds High/Very-High advisory.
+Equal Balanced Weighting,0.5,0.5,0.5 * P_24h + 0.5 * P_72h,56.87,107.93,75,90.36,8,9.64,0,0.0,0,0.0,0.0,Equal Balanced Weighting: 0.0% of state territory exceeds High/Very-High advisory.
+Long-Term Deep-Seated Saturation,0.3,0.7,0.3 * P_24h + 0.7 * P_72h,67.5,120.64,70,84.34,12,14.46,1,1.2,0,0.0,1.2,Long-Term Deep-Seated Saturation: 1.2% of state territory exceeds High/Very-High advisory.

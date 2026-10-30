@@ -1,0 +1,13 @@
+feature_id,module,description,status
+UI-01,Top Navigation,"Brand identity, live GPU accelerator telemetry, external documentation links",VERIFIED
+UI-02,Disclaimer Banner,Mandatory retrospective research archive warning banner (July 2025 pilot),VERIFIED
+UI-03,Leaflet GIS Map,"Dark Matter CartoDB base tiles, dynamic bounding box, vector boundary overlay",VERIFIED
+UI-04,Meghalaya Boundary,geoBoundaries gbOpen ADM1 vector outline with dashed cyan border,VERIFIED
+UI-05,Weather Candidate Dropdown,"7 selectable nowcasting models (ConvLSTM, MLP, FC-LSTM, LogReg, LK, HS, Persistence)",VERIFIED
+UI-06,Lead Horizon Dropdown,"5 horizons (+30m, +60m, +120m, +180m, +360m)",VERIFIED
+UI-07,Platt Calibration Toggle,Interactive checkbox enabling/disabling Platt scaling logit correction,VERIFIED
+UI-08,Landslide Model Dropdown,"3 selectable models (XGBoost, Random Forest, Logistic Regression)",VERIFIED
+UI-09,Timeline Slider & Player,"336 half-hourly timesteps with Play/Pause, Step, and Peak Storm shortcuts",VERIFIED
+UI-10,Cell Inspector,"Real-time multimodal query on map click (Lat, Lon, Rain, Tb, Probs, LSI, Hazard)",VERIFIED
+UI-11,Dynamic Legend,Contextual color ramp and category labels synchronized with active layers,VERIFIED
+UI-12,Historic Event Markers,"38 verified rainfall landslide markers with popups showing date, trigger, accuracy",VERIFIED

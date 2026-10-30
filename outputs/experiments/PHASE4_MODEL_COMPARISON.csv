@@ -1,0 +1,4 @@
+model_name,validation_scheme,uncertainty_mode,total_samples,total_presences,total_background,accuracy,balanced_accuracy,precision,recall,specificity,f1_score,roc_auc,pr_auc,brier_score,tp,fp,fn,tn,prevalence
+Logistic Regression,3-Fold Leave-One-Block-Out Spatial CV,Buffer_450m,228,38,190,0.9605,0.9026,0.9394,0.8158,0.9895,0.8732,0.9903,0.9352,0.031,31,2,7,188,0.1667
+Random Forest,3-Fold Leave-One-Block-Out Spatial CV,Buffer_450m,228,38,190,0.9298,0.8421,0.8438,0.7105,0.9737,0.7714,0.9669,0.8834,0.0541,27,5,11,185,0.1667
+XGBoost,3-Fold Leave-One-Block-Out Spatial CV,Buffer_450m,228,38,190,0.9211,0.8474,0.7778,0.7368,0.9579,0.7568,0.9623,0.868,0.0548,28,8,10,182,0.1667

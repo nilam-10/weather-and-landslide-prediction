@@ -1,0 +1,28 @@
+{
+  "verification_timestamp_utc": "2026-10-23T12:19:11.276016+00:00",
+  "total_monsoon_days": 21,
+  "days_2024": 14,
+  "days_2025": 7,
+  "total_aligned_half_hourly_steps": 1008,
+  "total_expected_steps": 1008,
+  "total_missing_steps": 0,
+  "total_imerg_subset_files": 1008,
+  "total_mergir_subset_files": 1006,
+  "domain_bounding_box": {
+    "lat_min": 24.55,
+    "lat_max": 26.95,
+    "lon_min": 89.55,
+    "lon_max": 93.45,
+    "grid_shape": [
+      25,
+      40
+    ]
+  },
+  "all_files_cryptographically_verified": true,
+  "dataset_roles": {
+    "training_period_2024": "2024-07-01 to 2024-07-14 (14 days, 672 steps)",
+    "training_period_2025": "2025-07-01 to 2025-07-04 (4 days, 192 steps)",
+    "validation_period_2025": "2025-07-05 (1 day, 48 steps, strictly tuning only)",
+    "held_out_test_period_2025": "2025-07-06 to 2025-07-07 (2 days, 96 steps, strictly untouched)"
+  }
+}

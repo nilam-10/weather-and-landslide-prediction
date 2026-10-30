@@ -1,0 +1,68 @@
+event_id,event_date,event_time_available,latitude,longitude,reported_accuracy,uncertainty_radius_km,trigger_original,trigger_classified,country,admin_division,inside_meghalaya,valid_for_90m_pixel_label,scientific_status,source_provenance,gsi_bhukosh_polygon_equivalent
+10987,6/17/2017,False,25.6784,91.9234,5km,5.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,The Arunachal Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+4407,6/13/2012,False,25.0951,92.3567,50km,50.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,zeenews.india,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6970,6/16/2015,False,25.5084,90.2191,1km,1.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,The Shillong Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+8955,11/16/2015,False,25.0821,91.7783,1km,1.0,unknown,mining_quarrying,Bangladesh,Sylhet,False,False,EXCLUDED_MINING_ARTIFACT,The Financial Express,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+12719,4/28/2018,True,25.0319,92.4226,1km,1.0,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,The Shillong Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6291,9/21/2014,False,25.7354,90.3852,25km,25.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Indian Express,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+259,9/11/2007,False,25.5200,91.2700,unknown,25.0,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,India times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+9789,5/26/2017,True,25.9072,91.8819,exact,0.1,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Shillong Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6293,10/20/2014,False,25.5006,90.0896,50km,50.0,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Times of India,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+8366,9/23/2015,True,25.5830,91.8930,5km,5.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,The Northeast Today,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+10985,6/17/2017,False,25.4381,91.7990,1km,1.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,The Arunachal Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+3927,8/16/2011,True,25.5144,90.2167,unknown,25.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,theshillongtimes.com,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+7706,8/19/2015,False,25.0728,92.3636,5km,5.0,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Assam Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+7956,9/5/2015,False,26.0480,91.8695,1km,1.0,unknown,unknown_or_anthropogenic,India,Meghalaya,True,False,EXCLUDED_UNCONFIRMED_TRIGGER,The Assam Tribune,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+10983,3/16/2017,True,25.1786,92.0128,5km,5.0,mining,mining_quarrying,Bangladesh,Sylhet,False,False,EXCLUDED_MINING_ARTIFACT,JagoNews24,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+4860,5/11/2013,False,26.1016,91.6906,5km,5.0,rain,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,articles.timesofindia.indiatimes.com,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+2140,7/25/2010,False,25.0477,92.8010,25km,25.0,downpour,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,Telegraph India,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+212,8/26/2007,False,25.5576,91.8506,unknown,25.0,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Newspost India.com,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+9124,7/19/2016,False,25.2030,90.5573,5km,5.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Business Standard,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+8012,9/6/2015,True,25.9703,91.8584,1km,1.0,unknown,unknown_or_anthropogenic,India,Meghalaya,True,False,EXCLUDED_UNCONFIRMED_TRIGGER,The Assam Tribune,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+4434,6/25/2012,True,26.1049,91.7369,1km,1.0,downpour,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,thesop.org,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+10988,7/9/2017,True,25.8260,91.8711,1km,1.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,The Shillong Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+12720,11/13/2017,True,25.1816,92.0006,10km,10.0,mining,mining_quarrying,Bangladesh,Sylhet,False,False,EXCLUDED_MINING_ARTIFACT,Sciency Thoughts,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6282,9/22/2014,False,26.1097,91.7747,5km,5.0,rain,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,Assam Tribune,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+10005,7/6/2017,False,26.1097,91.8032,10km,10.0,continuous_rain,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,DY365,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+7591,3/19/2015,False,25.0318,92.4584,5km,5.0,rain,rainfall_triggered,India,Assam,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,International Business Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+4408,6/13/2012,False,25.5498,92.0757,unknown,25.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,zeenews.india,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+13723,7/9/2019,False,25.5673,91.9064,5km,5.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Sentinel,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+10989,2/15/2017,False,25.5183,91.9630,1km,1.0,mining,mining_quarrying,India,Meghalaya,True,False,EXCLUDED_MINING_ARTIFACT,The Shillong Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6968,6/13/2015,False,25.4630,92.2121,5km,5.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,newKarala,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+7590,8/19/2015,False,25.1416,92.3807,5km,5.0,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,International Business Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+1857,5/11/2010,True,25.3433,92.2897,25km,25.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,prokerala,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+10982,3/6/2017,True,25.0926,91.7637,10km,10.0,mining,mining_quarrying,Bangladesh,Sylhet,False,False,EXCLUDED_MINING_ARTIFACT,The Daily Tribunal,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+9951,7/3/2017,False,26.1062,91.8516,5km,5.0,downpour,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,The Assam Tribune,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+683,8/1/2008,False,24.8960,91.9022,50km,50.0,rain,rainfall_triggered,Bangladesh,Sylhet,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,morungexpress,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6214,10/5/2014,True,25.9702,91.8587,5km,5.0,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,The Telegraph,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6289,9/22/2014,False,26.1001,91.6849,5km,5.0,rain,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,Assam Tribune,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+13724,7/9/2019,False,25.5882,92.0227,5km,5.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Sentinel,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+8684,7/7/2016,False,25.9611,91.3681,50km,50.0,continuous_rain,rainfall_triggered,India,Assam,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Hindustan Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+1994,6/16/2010,False,25.0633,92.8025,25km,25.0,downpour,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,ptinews,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+142,7/27/2007,False,25.5212,90.2320,10km,10.0,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Telegraph India,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6292,9/23/2014,False,25.7238,89.9032,5km,5.0,continuous_rain,rainfall_triggered,India,Assam,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Deccan Herald,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+10981,1/23/2017,False,25.0873,91.7506,1km,1.0,mining,mining_quarrying,Bangladesh,Sylhet,False,False,EXCLUDED_MINING_ARTIFACT,NewAge,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+7276,7/25/2015,True,26.1062,91.8717,5km,5.0,continuous_rain,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,ASSAM Talks,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6792,2/22/2015,True,25.1472,91.7483,5km,5.0,mining,mining_quarrying,Bangladesh,Sylhet,False,False,EXCLUDED_MINING_ARTIFACT,Dhaka Tribune,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+2026,6/28/2010,False,25.4916,91.2698,50km,50.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,neinews,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+10986,7/6/2017,True,25.8286,91.8767,1km,1.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,The Shillong Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+9952,7/3/2017,False,26.1043,91.8623,5km,5.0,downpour,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,The Assam Tribune,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+9333,2/25/2016,True,25.1622,92.0104,5km,5.0,mining,mining_quarrying,Bangladesh,Sylhet,False,False,EXCLUDED_MINING_ARTIFACT,NTV,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6969,6/16/2015,True,25.5114,90.2150,1km,1.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,The Shillong Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+10975,4/29/2017,True,25.6192,92.7095,25km,25.0,continuous_rain,rainfall_triggered,India,Assam,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,India Blooms,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6286,9/22/2014,False,26.1044,91.7082,5km,5.0,rain,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,Assam Tribune,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+7335,8/18/2015,True,25.5145,90.2023,1km,1.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Shillong Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+1961,6/9/2010,True,25.8833,91.2000,50km,50.0,downpour,rainfall_triggered,India,Assam,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,e-pao.net,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+13725,7/9/2019,False,25.5366,91.9808,10km,10.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Sentinel,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6213,9/24/2014,False,25.8143,90.5763,unknown,25.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,The New Indian Express,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+2025,6/28/2010,False,25.5728,91.8850,5km,5.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,hindustantimes,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+9949,7/3/2017,False,26.1004,91.8735,1km,1.0,downpour,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,The Assam Tribune,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+6290,9/23/2014,True,25.5772,91.8666,5km,5.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Zee News,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+7728,8/22/2015,True,26.1028,91.8806,5km,5.0,continuous_rain,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,Assam Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+10984,3/8/2017,False,25.1678,92.0196,5km,5.0,mining,mining_quarrying,Bangladesh,Sylhet,False,False,EXCLUDED_MINING_ARTIFACT,The Asian Age,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+9051,7/19/2016,True,26.0975,91.8744,25km,25.0,unknown,unknown_or_anthropogenic,India,Assam,True,False,EXCLUDED_UNCONFIRMED_TRIGGER,NELIVE (North East Live),NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+7336,8/19/2015,True,25.2193,90.5549,10km,10.0,continuous_rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,Shillong Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+7589,8/19/2015,False,25.2568,92.3825,25km,25.0,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,International Business Times,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+1776,4/21/2010,False,25.3612,92.2845,25km,25.0,downpour,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,hmar.in,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+3983,9/23/2011,False,26.1548,91.7351,unknown,25.0,downpour,rainfall_triggered,India,Assam,False,False,EXCLUDED_OUTSIDE_MEGHALAYA,nbtvlive,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU
+141,7/26/2007,False,25.3800,91.8800,50km,50.0,rain,rainfall_triggered,India,Meghalaya,True,False,SPATIAL_SUSCEPTIBILITY_POINT_ONLY,thestatesman.net,NOT_AVAILABLE_OPEN_ACCESS_REQUIRES_MOU

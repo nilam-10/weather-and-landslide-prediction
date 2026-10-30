@@ -1,0 +1,5 @@
+experiment_id,model_name,best_epoch,best_val_loss,train_duration_sec,train_loss_total,train_loss_bce,train_loss_qpf,train_loss_fss,val_loss_total,val_loss_bce,val_loss_qpf,val_loss_fss,val_csi_30m
+ExpA_Baseline,SimVP_ExpA_Baseline,14,0.4411,215.0,0.2499,0.0844,0.331,0.0,0.4433,0.1611,0.5645,0.0,0.3628
+ExpB_WeightedL1,SimVP_ExpB_IntensityWeightedL1,14,0.5865,193.38,0.3434,0.0834,0.52,0.0,0.5872,0.1654,0.8437,0.0,0.3701
+ExpC_SoftFSS,SimVP_ExpC_MultiscaleSoftFSS,14,0.6874,264.1,0.3886,0.0848,0.3421,0.2654,0.693,0.1644,0.5875,0.4698,0.3481
+ExpD_Combined,SimVP_ExpD_CombinedObjective,9,0.8303,251.91,0.473,0.0833,0.53,0.2494,0.8444,0.1692,0.8793,0.4712,0.3691

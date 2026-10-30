@@ -1,0 +1,68 @@
+event_id,event_date,latitude,longitude,location_accuracy,trigger_classification,inside_meghalaya_polygon,spatial_block,audit_status,inclusion_exclusion_reason,data_source
+10987,6/17/2017 0:00:00,25.67837,91.92343,5km,continuous_rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Arunachal Times
+4407,6/13/2012 0:00:00,25.0951,92.3567,50km,downpour,True,East Jaintia Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,zeenews.india
+6970,6/16/2015 0:00:00,25.5084,90.2191,1km,downpour,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Shillong Times
+8955,11/16/2015 0:00:00,25.0821,91.7783,1km,unknown,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),The Financial Express
+12719,4/28/2018 11:00:00,25.0319,92.42258,1km,rain,True,East Jaintia Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Shillong Times
+6291,9/21/2014 0:00:00,25.7354,90.3852,25km,continuous_rain,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Indian Express
+259,9/11/2007 0:00:00,25.52,91.27,unknown,rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,India times
+9789,5/26/2017 17:00:00,25.90723,91.88189,exact,rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Shillong Times
+6293,10/20/2014 0:00:00,25.5006,90.0896,50km,rain,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Times of India
+8366,9/23/2015 15:00:00,25.583,91.893,5km,downpour,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Northeast Today
+10985,6/17/2017 0:00:00,25.43807,91.79905,1km,continuous_rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Arunachal Times
+3927,8/16/2011 8:00:00,25.5144,90.2167,unknown,downpour,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,theshillongtimes.com
+7706,8/19/2015 0:00:00,25.0728,92.3636,5km,rain,True,East Jaintia Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Assam Times
+7956,9/5/2015 0:00:00,26.048,91.8695,1km,unknown,True,Central Khasi Hills,EXCLUDED_NON_RAINFALL,Non-hydrological trigger (unknown: quarry collapse or human mining),The Assam Tribune
+10983,3/16/2017 8:00:00,25.17862,92.01281,5km,mining,False,East Jaintia Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),JagoNews24
+4860,5/11/2013 0:00:00,26.1016,91.6906,5km,rain,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),articles.timesofindia.indiatimes.com
+2140,7/25/2010 0:00:00,25.0477,92.801,25km,downpour,False,East Jaintia Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),Telegraph India
+212,8/26/2007 0:00:00,25.5576,91.8506,unknown,rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Newspost India.com
+9124,7/19/2016 0:00:00,25.203,90.5573,5km,continuous_rain,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Business Standard
+8012,9/6/2015 15:00:00,25.9703,91.8584,1km,unknown,True,Central Khasi Hills,EXCLUDED_NON_RAINFALL,Non-hydrological trigger (unknown: quarry collapse or human mining),The Assam Tribune
+4434,6/25/2012 18:00:00,26.1049,91.7369,1km,downpour,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),thesop.org
+10988,7/9/2017 5:00:00,25.82601,91.87113,1km,continuous_rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Shillong Times
+12720,11/13/2017 9:30:00,25.18159,92.00057,10km,mining,False,East Jaintia Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),Sciency Thoughts
+6282,9/22/2014 0:00:00,26.1097,91.7747,5km,rain,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),Assam Tribune
+10005,7/6/2017 0:00:00,26.10973,91.80317,10km,continuous_rain,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),DY365
+7591,3/19/2015 0:00:00,25.0318,92.4584,5km,rain,False,East Jaintia Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),International Business Times
+4408,6/13/2012 0:00:00,25.5498,92.0757,unknown,downpour,True,East Jaintia Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,zeenews.india
+13723,7/9/2019 12:37:24,25.56728,91.90643,5km,continuous_rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Sentinel
+10989,2/15/2017 0:00:00,25.51826,91.96303,1km,mining,True,Central Khasi Hills,EXCLUDED_NON_RAINFALL,Non-hydrological trigger (mining: quarry collapse or human mining),The Shillong Times
+6968,6/13/2015 0:00:00,25.463,92.2121,5km,continuous_rain,True,East Jaintia Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,newKarala
+7590,8/19/2015 0:00:00,25.1416,92.3807,5km,rain,True,East Jaintia Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,International Business Times
+1857,5/11/2010 9:00:00,25.3433,92.2897,25km,downpour,True,East Jaintia Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,prokerala
+10982,3/6/2017 11:00:00,25.09258,91.76369,10km,mining,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),The Daily Tribunal
+9951,7/3/2017 0:00:00,26.10618,91.85159,5km,downpour,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Assam Tribune
+683,8/1/2008 0:00:00,24.896,91.9022,50km,rain,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),morungexpress
+6214,10/5/2014 17:45:00,25.9702,91.8587,5km,rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Telegraph
+6289,9/22/2014 0:00:00,26.1001,91.6849,5km,rain,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),Assam Tribune
+13724,7/9/2019 12:37:24,25.58823,92.0227,5km,continuous_rain,True,East Jaintia Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Sentinel
+8684,7/7/2016 0:00:00,25.9611,91.3681,50km,continuous_rain,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),Hindustan Times
+1994,6/16/2010 0:00:00,25.0633,92.8025,25km,downpour,False,East Jaintia Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),ptinews
+142,7/27/2007 0:00:00,25.5212,90.232,10km,rain,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Telegraph India
+6292,9/23/2014 0:00:00,25.7238,89.9032,5km,continuous_rain,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Deccan Herald
+10981,1/23/2017 0:00:00,25.08734,91.75064,1km,mining,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),NewAge
+7276,7/25/2015 9:00:00,26.1062,91.8717,5km,continuous_rain,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),ASSAM Talks
+6792,2/22/2015 20:30:00,25.1472,91.7483,5km,mining,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),Dhaka Tribune
+2026,6/28/2010 0:00:00,25.4916,91.2698,50km,downpour,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,neinews
+10986,7/6/2017 19:00:00,25.8286,91.87672,1km,downpour,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Shillong Times
+9952,7/3/2017 0:00:00,26.10431,91.86228,5km,downpour,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),The Assam Tribune
+9333,2/25/2016 13:00:00,25.1622,92.0104,5km,mining,False,East Jaintia Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),NTV
+6969,6/16/2015 6:15:00,25.5114,90.215,1km,downpour,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Shillong Times
+10975,4/29/2017 19:00:00,25.61919,92.70947,25km,continuous_rain,False,East Jaintia Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),India Blooms
+6286,9/22/2014 0:00:00,26.1044,91.7082,5km,rain,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),Assam Tribune
+7335,8/18/2015 9:00:00,25.5145,90.2023,1km,continuous_rain,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Shillong Times
+1961,6/9/2010 14:15:00,25.8833,91.2,50km,downpour,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),e-pao.net
+13725,7/9/2019 12:37:24,25.53664,91.98083,10km,continuous_rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Sentinel
+6213,9/24/2014 0:00:00,25.8143,90.5763,unknown,continuous_rain,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The New Indian Express
+2025,6/28/2010 0:00:00,25.5728,91.885,5km,downpour,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,hindustantimes
+9949,7/3/2017 0:00:00,26.10036,91.87352,1km,downpour,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,The Assam Tribune
+6290,9/23/2014 3:00:00,25.5772,91.8666,5km,continuous_rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Zee News
+7728,8/22/2015 9:00:00,26.1028,91.8806,5km,continuous_rain,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),Assam Times
+10984,3/8/2017 0:00:00,25.1678,92.01957,5km,mining,False,East Jaintia Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),The Asian Age
+9051,7/19/2016 9:00:00,26.09748,91.87443,25km,unknown,True,Central Khasi Hills,EXCLUDED_NON_RAINFALL,Non-hydrological trigger (unknown: quarry collapse or human mining),NELIVE (North East Live)
+7336,8/19/2015 9:00:00,25.2193,90.5549,10km,continuous_rain,True,West Garo Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,Shillong Times
+7589,8/19/2015 0:00:00,25.2568,92.3825,25km,rain,True,East Jaintia Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,International Business Times
+1776,4/21/2010 0:00:00,25.3612,92.2845,25km,downpour,True,East Jaintia Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,hmar.in
+3983,9/23/2011 0:00:00,26.1548,91.7351,unknown,downpour,False,Central Khasi Hills,EXCLUDED_CROSS_BORDER,Coordinate falls outside Meghalaya boundary (Assam or Bangladesh),nbtvlive
+141,7/26/2007 0:00:00,25.38,91.88,50km,rain,True,Central Khasi Hills,VERIFIED_RAINFALL_EVENT,Inside Meghalaya administrative boundary with verified rainfall trigger,thestatesman.net
