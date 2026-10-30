@@ -23,6 +23,7 @@ artifacts/
 *.tar.gz
 outputs/models/
 outputs/.matplotlib/
+catboost_info/
 Oct26_192660/
 meeting_recordings_batch/
 *netrc*

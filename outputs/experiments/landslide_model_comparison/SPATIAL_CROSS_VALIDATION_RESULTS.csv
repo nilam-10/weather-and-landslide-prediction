@@ -1,0 +1,91 @@
+roc_auc,pr_auc,accuracy,balanced_accuracy,precision,recall,specificity,f1,brier,tn,fp,fn,tp,n_samples,n_pos,model_name,test_block,validation_type,train_roc_auc,overfitting_gap
+0.4958,0.1176,0.8673,0.5282,0.25,0.0909,0.9655,0.1333,0.137,84,3,10,1,98,11,XGBoost (Baseline),West,Spatial Block CV (Leave-One-Block-Out),0.9748,0.479
+0.5904,0.2804,0.7606,0.5,0.0,0.0,1.0,0.0,0.1948,54,0,17,0,71,17,XGBoost (Baseline),Central,Spatial Block CV (Leave-One-Block-Out),0.9821,0.3917
+0.6878,0.2874,0.8305,0.5,0.0,0.0,1.0,0.0,0.1355,49,0,10,0,59,10,XGBoost (Baseline),East,Spatial Block CV (Leave-One-Block-Out),0.9585,0.2707
+0.489,0.12,0.4184,0.4739,0.1034,0.5455,0.4023,0.1739,0.2914,35,52,5,6,98,11,XGBoost (Tuned & Balanced),West,Spatial Block CV (Leave-One-Block-Out),0.9439,0.4549
+0.6057,0.2809,0.7042,0.4831,0.1667,0.0588,0.9074,0.087,0.1957,49,5,16,1,71,17,XGBoost (Tuned & Balanced),Central,Spatial Block CV (Leave-One-Block-Out),0.9643,0.3586
+0.6694,0.2483,0.7288,0.6378,0.3125,0.5,0.7755,0.3846,0.208,38,11,5,5,59,10,XGBoost (Tuned & Balanced),East,Spatial Block CV (Leave-One-Block-Out),0.9145,0.2451
+0.4598,0.1015,0.7449,0.4592,0.0625,0.0909,0.8276,0.0741,0.1674,72,15,10,1,98,11,Random Forest (Baseline),West,Spatial Block CV (Leave-One-Block-Out),1.0,0.5402
+0.5044,0.279,0.7606,0.5,0.0,0.0,1.0,0.0,0.1945,54,0,17,0,71,17,Random Forest (Baseline),Central,Spatial Block CV (Leave-One-Block-Out),1.0,0.4956
+0.6878,0.2537,0.7966,0.4796,0.0,0.0,0.9592,0.0,0.1417,47,2,10,0,59,10,Random Forest (Baseline),East,Spatial Block CV (Leave-One-Block-Out),1.0,0.3122
+0.5016,0.1163,0.5612,0.5543,0.1364,0.5455,0.5632,0.2182,0.239,49,38,5,6,98,11,Random Forest (Tuned & Balanced),West,Spatial Block CV (Leave-One-Block-Out),0.9903,0.4887
+0.5948,0.2784,0.6901,0.5545,0.3333,0.2941,0.8148,0.3125,0.2031,44,10,12,5,71,17,Random Forest (Tuned & Balanced),Central,Spatial Block CV (Leave-One-Block-Out),0.9989,0.4041
+0.6612,0.2373,0.7627,0.5786,0.3,0.3,0.8571,0.3,0.2002,42,7,7,3,59,10,Random Forest (Tuned & Balanced),East,Spatial Block CV (Leave-One-Block-Out),0.9876,0.3264
+0.4629,0.1142,0.5612,0.5146,0.119,0.4545,0.5747,0.1887,0.2381,50,37,6,5,98,11,Extra Trees Classifier,West,Spatial Block CV (Leave-One-Block-Out),0.9576,0.4947
+0.5534,0.2715,0.7606,0.5605,0.5,0.1765,0.9444,0.2609,0.2135,51,3,14,3,71,17,Extra Trees Classifier,Central,Spatial Block CV (Leave-One-Block-Out),0.9636,0.4102
+0.5918,0.2117,0.661,0.6367,0.2727,0.6,0.6735,0.375,0.2376,33,16,4,6,59,10,Extra Trees Classifier,East,Spatial Block CV (Leave-One-Block-Out),0.9197,0.3279
+0.5,0.119,0.5714,0.5601,0.1395,0.5455,0.5747,0.2222,0.2473,50,37,5,6,98,11,LightGBM Classifier,West,Spatial Block CV (Leave-One-Block-Out),0.9515,0.4515
+0.622,0.3592,0.7183,0.5125,0.2857,0.1176,0.9074,0.1667,0.1857,49,5,15,2,71,17,LightGBM Classifier,Central,Spatial Block CV (Leave-One-Block-Out),0.9772,0.3552
+0.7449,0.3028,0.7288,0.5582,0.25,0.3,0.8163,0.2727,0.1642,40,9,7,3,59,10,LightGBM Classifier,East,Spatial Block CV (Leave-One-Block-Out),0.9303,0.1854
+0.511,0.131,0.5204,0.4916,0.1087,0.4545,0.5287,0.1754,0.2417,46,41,6,5,98,11,CatBoost Classifier,West,Spatial Block CV (Leave-One-Block-Out),0.9241,0.4131
+0.6416,0.3991,0.7042,0.5839,0.375,0.3529,0.8148,0.3636,0.2178,44,10,11,6,71,17,CatBoost Classifier,Central,Spatial Block CV (Leave-One-Block-Out),0.9611,0.3195
+0.6224,0.2376,0.6102,0.6459,0.2593,0.7,0.5918,0.3784,0.2424,29,20,3,7,59,10,CatBoost Classifier,East,Spatial Block CV (Leave-One-Block-Out),0.8964,0.274
+0.5637,0.1341,0.8878,0.5,0.0,0.0,1.0,0.0,0.124,87,0,11,0,98,11,HistGradientBoosting,West,Spatial Block CV (Leave-One-Block-Out),0.9389,0.3752
+0.6405,0.3174,0.7606,0.5,0.0,0.0,1.0,0.0,0.1854,54,0,17,0,71,17,HistGradientBoosting,Central,Spatial Block CV (Leave-One-Block-Out),0.9541,0.3136
+0.7041,0.2641,0.8305,0.5,0.0,0.0,1.0,0.0,0.132,49,0,10,0,59,10,HistGradientBoosting,East,Spatial Block CV (Leave-One-Block-Out),0.9072,0.2031
+0.4702,0.1082,0.6735,0.4587,0.08,0.1818,0.7356,0.1111,0.18,64,23,9,2,98,11,Gradient Boosting,West,Spatial Block CV (Leave-One-Block-Out),0.9507,0.4805
+0.6585,0.3704,0.7606,0.5,0.0,0.0,1.0,0.0,0.1842,54,0,17,0,71,17,Gradient Boosting,Central,Spatial Block CV (Leave-One-Block-Out),0.9762,0.3177
+0.5633,0.1912,0.8136,0.4898,0.0,0.0,0.9796,0.0,0.1483,48,1,10,0,59,10,Gradient Boosting,East,Spatial Block CV (Leave-One-Block-Out),0.8493,0.286
+0.5371,0.2156,0.8878,0.5,0.0,0.0,1.0,0.0,0.114,87,0,11,0,98,11,Logistic Regression (L2),West,Spatial Block CV (Leave-One-Block-Out),0.7192,0.1821
+0.5033,0.2377,0.7606,0.5,0.0,0.0,1.0,0.0,0.2003,54,0,17,0,71,17,Logistic Regression (L2),Central,Spatial Block CV (Leave-One-Block-Out),0.6908,0.1875
+0.5735,0.3128,0.8305,0.5,0.0,0.0,1.0,0.0,0.1423,49,0,10,0,59,10,Logistic Regression (L2),East,Spatial Block CV (Leave-One-Block-Out),0.7143,0.1408
+0.5329,0.225,0.5102,0.5256,0.1224,0.5455,0.5057,0.2,0.2558,44,43,5,6,98,11,Logistic Regression (Balanced),West,Spatial Block CV (Leave-One-Block-Out),0.7163,0.1834
+0.512,0.232,0.5915,0.5098,0.25,0.3529,0.6667,0.2927,0.2418,36,18,11,6,71,17,Logistic Regression (Balanced),Central,Spatial Block CV (Leave-One-Block-Out),0.6978,0.1858
+0.5755,0.3156,0.4576,0.5541,0.1944,0.7,0.4082,0.3043,0.2885,20,29,3,7,59,10,Logistic Regression (Balanced),East,Spatial Block CV (Leave-One-Block-Out),0.7148,0.1393
+0.511,0.2359,0.8878,0.5,0.0,0.0,1.0,0.0,0.1093,87,0,11,0,98,11,SVM (RBF Kernel),West,Spatial Block CV (Leave-One-Block-Out),0.8986,0.3876
+0.6471,0.3363,0.7606,0.5,0.0,0.0,1.0,0.0,0.1927,54,0,17,0,71,17,SVM (RBF Kernel),Central,Spatial Block CV (Leave-One-Block-Out),0.9037,0.2566
+0.5959,0.2565,0.8305,0.5,0.0,0.0,1.0,0.0,0.1397,49,0,10,0,59,10,SVM (RBF Kernel),East,Spatial Block CV (Leave-One-Block-Out),0.8774,0.2815
+0.4222,0.1001,0.8878,0.5,0.0,0.0,1.0,0.0,0.1088,87,0,11,0,98,11,SVM (Linear Kernel),West,Spatial Block CV (Leave-One-Block-Out),0.2862,-0.136
+0.524,0.2356,0.7606,0.5,0.0,0.0,1.0,0.0,0.1936,54,0,17,0,71,17,SVM (Linear Kernel),Central,Spatial Block CV (Leave-One-Block-Out),0.7003,0.1763
+0.551,0.3272,0.8305,0.5,0.0,0.0,1.0,0.0,0.1401,49,0,10,0,59,10,SVM (Linear Kernel),East,Spatial Block CV (Leave-One-Block-Out),0.7102,0.1592
+0.6061,0.251,0.6939,0.5496,0.1481,0.3636,0.7356,0.2105,0.2443,64,23,7,4,98,11,Regularized MLP / ANN,West,Spatial Block CV (Leave-One-Block-Out),1.0,0.3939
+0.6449,0.3268,0.7465,0.5109,0.3333,0.0588,0.963,0.1,0.2535,52,2,16,1,71,17,Regularized MLP / ANN,Central,Spatial Block CV (Leave-One-Block-Out),1.0,0.3551
+0.5245,0.1811,0.6949,0.4582,0.1,0.1,0.8163,0.1,0.2624,40,9,9,1,59,10,Regularized MLP / ANN,East,Spatial Block CV (Leave-One-Block-Out),1.0,0.4755
+0.5298,0.1432,0.8878,0.5,0.0,0.0,1.0,0.0,0.1126,87,0,11,0,98,11,Stacking Ensemble,West,Spatial Block CV (Leave-One-Block-Out),0.9827,0.4529
+0.6275,0.3142,0.7606,0.5,0.0,0.0,1.0,0.0,0.1922,54,0,17,0,71,17,Stacking Ensemble,Central,Spatial Block CV (Leave-One-Block-Out),0.987,0.3595
+0.6347,0.2267,0.8305,0.5,0.0,0.0,1.0,0.0,0.1399,49,0,10,0,59,10,Stacking Ensemble,East,Spatial Block CV (Leave-One-Block-Out),0.8625,0.2278
+0.5778,0.1381,0.8265,0.5052,0.125,0.0909,0.9195,0.1053,0.1427,80,7,10,1,98,11,XGBoost (Baseline) (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.9935,0.4157
+0.6656,0.3592,0.7606,0.5,0.0,0.0,1.0,0.0,0.193,54,0,17,0,71,17,XGBoost (Baseline) (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.9842,0.3186
+0.6918,0.2373,0.8305,0.5,0.0,0.0,1.0,0.0,0.1382,49,0,10,0,59,10,XGBoost (Baseline) (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.9739,0.2821
+0.5632,0.1525,0.3776,0.4906,0.1094,0.6364,0.3448,0.1867,0.2949,30,57,4,7,98,11,XGBoost (Tuned & Balanced) (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.9666,0.4034
+0.6547,0.3456,0.6901,0.4739,0.1429,0.0588,0.8889,0.0833,0.1873,48,6,16,1,71,17,XGBoost (Tuned & Balanced) (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.9678,0.3131
+0.7143,0.3578,0.7288,0.6776,0.3333,0.6,0.7551,0.4286,0.1991,37,12,4,6,59,10,XGBoost (Tuned & Balanced) (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.9392,0.2249
+0.5037,0.1232,0.7857,0.5617,0.1875,0.2727,0.8506,0.2222,0.165,74,13,8,3,98,11,Random Forest (Baseline) (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),1.0,0.4963
+0.4728,0.2801,0.7606,0.5,0.0,0.0,1.0,0.0,0.2037,54,0,17,0,71,17,Random Forest (Baseline) (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),1.0,0.5272
+0.6592,0.2192,0.7966,0.4796,0.0,0.0,0.9592,0.0,0.146,47,2,10,0,59,10,Random Forest (Baseline) (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),1.0,0.3408
+0.5444,0.1252,0.602,0.5773,0.15,0.5455,0.6092,0.2353,0.23,53,34,5,6,98,11,Random Forest (Tuned & Balanced) (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.9964,0.452
+0.5697,0.2684,0.7183,0.5125,0.2857,0.1176,0.9074,0.1667,0.1961,49,5,15,2,71,17,Random Forest (Tuned & Balanced) (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.9972,0.4275
+0.6959,0.2761,0.7627,0.698,0.375,0.6,0.7959,0.4615,0.1948,39,10,4,6,59,10,Random Forest (Tuned & Balanced) (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.9944,0.2985
+0.4639,0.1128,0.5306,0.4577,0.093,0.3636,0.5517,0.1481,0.2391,48,39,7,4,98,11,Extra Trees Classifier (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.9651,0.5012
+0.6242,0.3171,0.7183,0.5327,0.3333,0.1765,0.8889,0.2308,0.2064,48,6,14,3,71,17,Extra Trees Classifier (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.9709,0.3467
+0.6102,0.2295,0.7119,0.7071,0.3333,0.7,0.7143,0.4516,0.2284,35,14,3,7,59,10,Extra Trees Classifier (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.9367,0.3265
+0.5731,0.1388,0.4898,0.5538,0.1321,0.6364,0.4713,0.2188,0.2548,41,46,4,7,98,11,LightGBM Classifier (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.9561,0.383
+0.5806,0.3128,0.7183,0.4924,0.2,0.0588,0.9259,0.0909,0.1949,50,4,16,1,71,17,LightGBM Classifier (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.9769,0.3963
+0.7143,0.2513,0.6949,0.498,0.1667,0.2,0.7959,0.1818,0.1602,39,10,8,2,59,10,LightGBM Classifier (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.9439,0.2296
+0.5643,0.1376,0.398,0.5021,0.1129,0.6364,0.3678,0.1918,0.2625,32,55,4,7,98,11,CatBoost Classifier (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.9302,0.3659
+0.6166,0.2885,0.662,0.5158,0.2667,0.2353,0.7963,0.25,0.218,43,11,13,4,71,17,CatBoost Classifier (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.9545,0.3379
+0.6571,0.2393,0.6271,0.6561,0.2692,0.7,0.6122,0.3889,0.2354,30,19,3,7,59,10,CatBoost Classifier (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.9093,0.2522
+0.698,0.2527,0.8673,0.5282,0.25,0.0909,0.9655,0.1333,0.1202,84,3,10,1,98,11,HistGradientBoosting (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.9479,0.2499
+0.6634,0.3671,0.7746,0.5294,1.0,0.0588,1.0,0.1111,0.1925,54,0,16,1,71,17,HistGradientBoosting (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.9601,0.2967
+0.6714,0.2373,0.8305,0.5,0.0,0.0,1.0,0.0,0.1361,49,0,10,0,59,10,HistGradientBoosting (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.9326,0.2612
+0.4807,0.1102,0.6633,0.453,0.0769,0.1818,0.7241,0.1081,0.187,63,24,9,2,98,11,Gradient Boosting (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.9556,0.4749
+0.6035,0.3174,0.7746,0.5294,1.0,0.0588,1.0,0.1111,0.1887,54,0,16,1,71,17,Gradient Boosting (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.9779,0.3744
+0.6531,0.2301,0.8136,0.4898,0.0,0.0,0.9796,0.0,0.1424,48,1,10,0,59,10,Gradient Boosting (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.911,0.2579
+0.5329,0.2253,0.8878,0.5,0.0,0.0,1.0,0.0,0.119,87,0,11,0,98,11,Logistic Regression (L2) (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.7314,0.1985
+0.5054,0.2489,0.7606,0.5,0.0,0.0,1.0,0.0,0.2028,54,0,17,0,71,17,Logistic Regression (L2) (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.7244,0.219
+0.5816,0.4356,0.8475,0.55,1.0,0.1,1.0,0.1818,0.1423,49,0,9,1,59,10,Logistic Regression (L2) (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.7173,0.1357
+0.5225,0.1302,0.4898,0.5141,0.1176,0.5455,0.4828,0.1935,0.2726,42,45,5,6,98,11,Logistic Regression (Balanced) (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.7242,0.2017
+0.5087,0.2386,0.6197,0.5485,0.2917,0.4118,0.6852,0.3415,0.2405,37,17,10,7,71,17,Logistic Regression (Balanced) (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.7321,0.2234
+0.5878,0.3689,0.4237,0.4939,0.1667,0.6,0.3878,0.2609,0.2914,19,30,4,6,59,10,Logistic Regression (Balanced) (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.7237,0.1359
+0.5319,0.2189,0.8878,0.5,0.0,0.0,1.0,0.0,0.1093,87,0,11,0,98,11,SVM (RBF Kernel) (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.9184,0.3865
+0.671,0.3592,0.7606,0.5,0.0,0.0,1.0,0.0,0.1917,54,0,17,0,71,17,SVM (RBF Kernel) (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.93,0.259
+0.5939,0.2315,0.8305,0.5,0.0,0.0,1.0,0.0,0.1392,49,0,10,0,59,10,SVM (RBF Kernel) (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.8908,0.2969
+0.4023,0.0972,0.8878,0.5,0.0,0.0,1.0,0.0,0.109,87,0,11,0,98,11,SVM (Linear Kernel) (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.2715,-0.1308
+0.5054,0.2275,0.7606,0.5,0.0,0.0,1.0,0.0,0.1937,54,0,17,0,71,17,SVM (Linear Kernel) (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.7346,0.2292
+0.5755,0.4004,0.8305,0.5,0.0,0.0,1.0,0.0,0.1389,49,0,10,0,59,10,SVM (Linear Kernel) (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.7262,0.1507
+0.5277,0.2383,0.6327,0.5152,0.1212,0.3636,0.6667,0.1818,0.3341,58,29,7,4,98,11,Regularized MLP / ANN (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),1.0,0.4723
+0.6547,0.4241,0.7465,0.531,0.4,0.1176,0.9444,0.1818,0.222,51,3,15,2,71,17,Regularized MLP / ANN (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),1.0,0.3453
+0.5204,0.1687,0.7627,0.499,0.1667,0.1,0.898,0.125,0.2265,44,5,9,1,59,10,Regularized MLP / ANN (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),1.0,0.4796
+0.5904,0.1696,0.8878,0.5,0.0,0.0,1.0,0.0,0.1125,87,0,11,0,98,11,Stacking Ensemble (+Engineered Feats),West,Spatial Block CV (Leave-One-Block-Out),0.995,0.4046
+0.5937,0.3204,0.7606,0.5,0.0,0.0,1.0,0.0,0.1927,54,0,17,0,71,17,Stacking Ensemble (+Engineered Feats),Central,Spatial Block CV (Leave-One-Block-Out),0.9972,0.4035
+0.6612,0.2564,0.8305,0.5,0.0,0.0,1.0,0.0,0.1386,49,0,10,0,59,10,Stacking Ensemble (+Engineered Feats),East,Spatial Block CV (Leave-One-Block-Out),0.9554,0.2942
